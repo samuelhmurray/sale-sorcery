@@ -8,17 +8,19 @@ export const ClientDetails = ({ allClients }) => {
   const [client, setClient] = useState([]);
   const [projects, setProjects] = useState([]);
   const { clientId } = useParams();
+  console.log(clientId);
 
   useEffect(() => {
     getClientById(clientId).then((clientObj) => {
       setClient(clientObj);
     });
-    getAllProjects().then((project) => {
-      if (project.clientId === clientId) {
-        setProjects(project);
-      }
+    getAllProjects().then((allProjects) => {
+      const clientProjects = allProjects.filter(
+        (project) => project.clientId === clientId
+      );
+      setProjects(clientProjects);
     });
-  }, []);
+  }, [clientId]);
 
   return (
     <>
@@ -33,11 +35,12 @@ export const ClientDetails = ({ allClients }) => {
         <Card.Text>Phone: {client?.phone}</Card.Text>
         <Card.Text>Email: {client?.email}</Card.Text>
       </Card>
+
+      {/* needs to be fixed  */}
       <Card className="card">
-        <Card.Title></Card.Title>
-        <Card.Text>Project name: {client?.title}</Card.Text>
-        <Card.Text>Market: {client?.phone}</Card.Text>
-        <Card.Text>Budget: {client?.email}</Card.Text>
+        <Card.Text>Project name: {projects.name}</Card.Text>
+        <Card.Text>Market: {projects.market}</Card.Text>
+        <Card.Text>Budget: {client.budget}</Card.Text>
       </Card>
     </>
   );
