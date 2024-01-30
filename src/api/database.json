@@ -206,6 +206,7 @@
       "lastName": "Baxter",
       "title": "Marketing Director",
       "phone": "555-1234",
+      "isAdmin": false,
       "email": "eleanor.baxter@example.com"
     },
     {
@@ -214,6 +215,7 @@
       "lastName": "Harrison",
       "title": "Chief Digital Officer",
       "phone": "555-5678",
+      "isAdmin": false,
       "email": "victor.harrison@example.com"
     },
     {
@@ -222,6 +224,7 @@
       "lastName": "Lee",
       "title": "Social Media Manager",
       "phone": "555-9876",
+      "isAdmin": false,
       "email": "sophia.lee@example.com"
     },
     {
@@ -230,6 +233,7 @@
       "lastName": "Perez",
       "title": "SEO Specialist",
       "phone": "555-4321",
+      "isAdmin": false,
       "email": "david.perez@example.com"
     },
     {
@@ -238,6 +242,7 @@
       "lastName": "Thompson",
       "title": "Content Strategist",
       "phone": "555-8765",
+      "isAdmin": false,
       "email": "emma.thompson@example.com"
     },
     {
@@ -246,6 +251,7 @@
       "lastName": "Fleming",
       "title": "Marketing Coordinator",
       "phone": "555-1122",
+      "isAdmin": false,
       "email": "lucas.fleming@example.com"
     },
     {
@@ -254,6 +260,7 @@
       "lastName": "Ward",
       "title": "Public Relations Specialist",
       "phone": "555-3344",
+      "isAdmin": false,
       "email": "olivia.ward@example.com"
     },
     {
@@ -262,6 +269,7 @@
       "lastName": "Barnes",
       "title": "Digital Marketing Manager",
       "phone": "555-5566",
+      "isAdmin": false,
       "email": "cameron.barnes@example.com"
     },
     {
@@ -270,6 +278,7 @@
       "lastName": "Morrison",
       "title": "Content Creator",
       "phone": "555-7788",
+      "isAdmin": false,
       "email": "harper.morrison@example.com"
     },
     {
@@ -278,6 +287,7 @@
       "lastName": "Bryant",
       "title": "Social Media Specialist",
       "phone": "555-9900",
+      "isAdmin": false,
       "email": "logan.bryant@example.com"
     },
     {
@@ -286,6 +296,7 @@
       "lastName": "Wells",
       "title": "SEO Analyst",
       "phone": "555-1122",
+      "isAdmin": false,
       "email": "madison.wells@example.com"
     },
     {
@@ -294,6 +305,7 @@
       "lastName": "Murray",
       "title": "Marketing Coordinator",
       "phone": "555-3344",
+      "isAdmin": false,
       "email": "avery.murray@example.com"
     },
     {
@@ -302,6 +314,7 @@
       "lastName": "Ferguson",
       "title": "Content Strategist",
       "phone": "555-5566",
+      "isAdmin": false,
       "email": "elijah.ferguson@example.com"
     },
     {
@@ -310,6 +323,7 @@
       "lastName": "Gordon",
       "title": "Digital Marketing Manager",
       "phone": "555-7788",
+      "isAdmin": false,
       "email": "aria.gordon@example.com"
     },
     {
@@ -318,6 +332,7 @@
       "lastName": "Rose",
       "title": "Social Media Specialist",
       "phone": "555-9900",
+      "isAdmin": false,
       "email": "jackson.rose@example.com"
     },
     {
@@ -326,6 +341,7 @@
       "lastName": "Hunt",
       "title": "SEO Specialist",
       "phone": "555-1122",
+      "isAdmin": false,
       "email": "scarlett.hunt@example.com"
     },
     {
@@ -334,6 +350,7 @@
       "lastName": "Carroll",
       "title": "Marketing Director",
       "phone": "555-3344",
+      "isAdmin": false,
       "email": "leo.carroll@example.com"
     },
     {
@@ -342,6 +359,7 @@
       "lastName": "Mills",
       "title": "Chief Digital Officer",
       "phone": "555-5566",
+      "isAdmin": false,
       "email": "lila.mills@example.com"
     },
     {
@@ -350,6 +368,7 @@
       "lastName": "Reyes",
       "title": "Social Media Manager",
       "phone": "555-7788",
+      "isAdmin": false,
       "email": "grayson.reyes@example.com"
     },
     {
@@ -358,6 +377,7 @@
       "lastName": "Fisher",
       "title": "SEO Analyst",
       "phone": "555-9900",
+      "isAdmin": false,
       "email": "amelia.fisher@example.com"
     }
   ],

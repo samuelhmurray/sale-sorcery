@@ -3,6 +3,7 @@
   flex-wrap: nowrap;
   background-color:#262626;
   margin: 0;
+  width: 100%;
   padding: 0.5rem;
 }
 
@@ -16,6 +17,8 @@
   text-decoration: none;
   letter-spacing: 1px;
   font-weight: bold;
+  border-radius: 5px;
+  
 }
 
 .navbar-logout {
@@ -29,7 +32,6 @@
 .navbar-link:hover  {
   color: blueviolet;
 }
-
 
 a {
   color: white;

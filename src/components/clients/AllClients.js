@@ -1,34 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
 import "../../App.css";
-import { Link as EmailLink } from "@react-email/components";
+import { getAllClients } from "../../services/clientServices.js";
 
-export const AllClients = ({ allClients }) => {
+export const AllClients = () => {
+  const [allClients, setAllClients] = useState([]);
+  useEffect(() => {
+    getAllClients().then((clients) => {
+      setAllClients(clients);
+    });
+  }, []);
   return (
-    <>
+    <div className="card-container">
       {allClients.map((client) => (
-        <Link
-          key={client.id}
-          to={`/clients/${client.id}`}
-          className="card-link"
-        >
-          <Card className="card">
-            <Card.Text>
+        <Card key={client.id} className="card card-link">
+          <Link to={`/clients/${client.id}`}>
+            <Card.Title>
               Client Name: {client.firstName} {client.lastName}
-            </Card.Text>
+            </Card.Title>
             <Card.Text>Title: {client.title}</Card.Text>
             <Card.Text>Phone: {client.phone}</Card.Text>
-
-            <Card.Text>
-              Email:
-              <EmailLink href={client.email} className="text-link">
-                {client.email}
-              </EmailLink>
-            </Card.Text>
-          </Card>
-        </Link>
+            <Card.Text>Email: {client.email}</Card.Text>
+          </Link>
+        </Card>
       ))}
-    </>
+    </div>
   );
 };

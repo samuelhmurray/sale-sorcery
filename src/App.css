@@ -1,17 +1,21 @@
-.card-link  {
-    text-decoration: none; 
-}
 
+    .card-container{
+      display:flex;
+      flex-wrap: wrap;
+    }
+    
+    
     .card {
     border: 5px solid white;
     margin: 10px 20px 30px 40px;
     padding: 10px;
     border-radius: 25px;
     width: 300px;
+    
   }
   
 
-  .card:hover {
+  .card-link:hover {
     transform: scale(1.1);
   }
   
@@ -26,3 +30,4 @@ color: blueviolet;
   }
 
   .text-link{color: white;}
+  
