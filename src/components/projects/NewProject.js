@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import "./Form.css";
 import { getAllClients } from "../../services/clientServices.js";
 import { saveNewproject } from "../../services/projectServices.js";
+import { useNavigate } from "react-router-dom";
 
 export const NewProject = () => {
   const [clients, setClients] = useState([]);
@@ -14,7 +15,7 @@ export const NewProject = () => {
   const [selectedBudget, setSelectedBudget] = useState(0);
   const [selectedDescription, setSelectedDescription] = useState("");
   const [newProjectId, setNewProjectId] = useState(0);
-
+  const navigate = useNavigate();
   useEffect(() => {
     getAllClients().then((res) => {
       setClients(res);
@@ -32,11 +33,8 @@ export const NewProject = () => {
       budget: +selectedBudget,
       description: selectedDescription,
     };
-    console.log("Submitting projectObj:", projectObj);
-
     saveNewproject(projectObj).then((res) => {
-      setNewProjectId(res.id);
-      console.log("Response from saveNewproject:", res);
+      navigate(`/projects`);
     });
   };
 

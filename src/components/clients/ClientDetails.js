@@ -8,7 +8,6 @@ export const ClientDetails = ({ allClients }) => {
   const [client, setClient] = useState([]);
   const [projects, setProjects] = useState([]);
   const { clientId } = useParams();
-  console.log(clientId);
 
   useEffect(() => {
     getClientById(clientId).then((clientObj) => {
