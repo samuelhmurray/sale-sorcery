@@ -206,6 +206,36 @@
       "budget": 10000,
       "description": "iPhone brand awareness nationwide - google ads ",
       "id": 16
+    },
+    {
+      "name": "Apple Holiday",
+      "clientId": 2,
+      "timeline": "2025-12-20 to 2025-01-01",
+      "market": "CA",
+      "product": "Macbook pro",
+      "budget": 10000,
+      "description": "Brand awareness holiday ",
+      "id": 17
+    },
+    {
+      "name": "Mattel - YT awareness ",
+      "clientId": 5,
+      "timeline": "2025-01-01 to 2026-01-01",
+      "market": "US",
+      "product": "Barbie",
+      "budget": 10000,
+      "description": "Barbie brand bump",
+      "id": 18
+    },
+    {
+      "name": "Nike - Meta ",
+      "clientId": 20,
+      "timeline": "2025-10-01 to 2025-17-03",
+      "market": "OR",
+      "product": "Men's running",
+      "budget": 10000,
+      "description": "Brand awareness ",
+      "id": 19
     }
   ],
   "clients": [
