@@ -1,39 +1,62 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import "./Form.css";
-import { useNavigate } from "react-router-dom";
 import { getAllClients } from "../../services/clientServices.js";
+import { saveNewproject } from "../../services/projectServices.js";
 
 export const NewProject = () => {
-  const [clients, setClients] = useState({});
-  const navigate = useNavigate();
+  const [clients, setClients] = useState([]);
+  const [selectedClient, setSelectedClient] = useState(0);
+  const [selectedProjectName, setSelectedProjectName] = useState("");
+  const [selectedTimeLine, setSelectedTimeLine] = useState("");
+  const [selectedMarket, setSelectedMarket] = useState("");
+  const [selectedProduct, setSelectedProduct] = useState("");
+  const [selectedBudget, setSelectedBudget] = useState(0);
+  const [selectedDescription, setSelectedDescription] = useState("");
+  const [newProjectId, setNewProjectId] = useState(0);
+
   useEffect(() => {
     getAllClients().then((res) => {
       setClients(res);
     });
   }, []);
 
-  // const handelSave = (event) => {
-  //   event.preventDefault();
-  //   console.log("clicked");
+  const handleAddNewProject = async (event) => {
+    event.preventDefault();
+    const projectObj = {
+      name: selectedProjectName,
+      clientId: selectedClient,
+      timeline: selectedTimeLine,
+      market: selectedMarket,
+      product: selectedProduct,
+      budget: +selectedBudget,
+      description: selectedDescription,
+    };
+    console.log("Submitting projectObj:", projectObj);
 
-  //
-  //   newProject(editedEmployee).then(() => {
-  //     navigate(`/projects`);
-  //   });
-  // };
+    saveNewproject(projectObj).then((res) => {
+      setNewProjectId(res.id);
+      console.log("Response from saveNewproject:", res);
+    });
+  };
 
   return (
     <form className="profile">
       <h2>Create New Project</h2>
       <fieldset>
-        <select name="client">
+        <select
+          className="form-dropdown"
+          name="client"
+          onChange={(event) => {
+            setSelectedClient(+event.target.value);
+          }}
+        >
           <option id="0" value={0}>
             Assign Client
           </option>
           {clients.map((client) => (
             <option key={client.id} value={client.id}>
-              {client.firstName}, {client.lastName}
+              {client.firstName} {client.lastName}
             </option>
           ))}
         </select>
@@ -45,13 +68,23 @@ export const NewProject = () => {
             type="text"
             className="form-control"
             placeholder="Project Name"
+            onChange={(event) => {
+              setSelectedProjectName(event.target.value);
+            }}
           />
         </div>
       </fieldset>
       <fieldset>
         <div className="form-group">
           <label>Budget</label>
-          <input type="number" className="form-control" placeholder="Budget" />
+          <input
+            type="number"
+            className="form-control"
+            placeholder="Budget"
+            onChange={(event) => {
+              setSelectedBudget(event.target.value);
+            }}
+          />
         </div>
       </fieldset>
       <fieldset>
@@ -61,9 +94,14 @@ export const NewProject = () => {
             type="text"
             className="form-control"
             placeholder="Product name"
+            onChange={(event) => {
+              setSelectedProduct(event.target.value);
+            }}
           />
         </div>
       </fieldset>
+      {/* change this to a dropdown with statelist 
+      https://shorturl.at/huV57 */}
       <fieldset>
         <div className="form-group">
           <label>Market</label>
@@ -71,19 +109,45 @@ export const NewProject = () => {
             type="text"
             className="form-control"
             placeholder="Product name"
+            onChange={(event) => {
+              setSelectedMarket(event.target.value);
+            }}
           />
         </div>
       </fieldset>
-      {/* make this type="date" and have a from and to input date? */}
+      {/* make this type="date" and have a "from" and 
+      "to" input date? */}
       <fieldset>
         <div className="form-group">
           <label>Timeline</label>
-          <input type="text" className="form-control" placeholder="Timeline" />
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Timeline"
+            onChange={(event) => {
+              setSelectedTimeLine(event.target.value);
+            }}
+          />
         </div>
       </fieldset>
       <fieldset>
         <div className="form-group">
-          <button className="form-btn btn-info">Add New Project</button>
+          <label>Description</label>
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Description"
+            onChange={(event) => {
+              setSelectedDescription(event.target.value);
+            }}
+          />
+        </div>
+      </fieldset>
+      <fieldset>
+        <div className="form-btn">
+          <button className="form-btn btn-info" onClick={handleAddNewProject}>
+            Add New Project
+          </button>
         </div>
       </fieldset>
     </form>

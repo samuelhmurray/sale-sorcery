@@ -143,7 +143,6 @@
       "clientId": 3,
       "timeline": "2024-11-15 to 2025-03-15",
       "market": "NC",
-
       "product": "VisualStory Master",
       "budget": 75000,
       "description": "Produce high-quality video content for marketing and promotional purposes."
@@ -197,6 +196,16 @@
       "product": "BrandRevive",
       "budget": 65000,
       "description": "Refresh the company brand with a comprehensive marketing campaign."
+    },
+    {
+      "name": "Apple Brand",
+      "clientId": 3,
+      "timeline": "2025-01-01 to 2025-02-02",
+      "market": "US",
+      "product": "iPhone",
+      "budget": 10000,
+      "description": "iPhone brand awareness nationwide - google ads ",
+      "id": 16
     }
   ],
   "clients": [
