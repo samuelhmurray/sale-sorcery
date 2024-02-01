@@ -6,8 +6,12 @@ export const getAllProjects = async () => {
   );
   return await res.json();
 };
+export const getProjectById = async (projectId) => {
+  const res = await fetch(`http://localhost:8088/projects/${projectId}`);
+  return await res.json();
+};
 
-export const saveNewproject = async (projectObj) => {
+export const saveNewProject = async (projectObj) => {
   const postOptions = {
     method: "POST",
     headers: {
@@ -20,6 +24,21 @@ export const saveNewproject = async (projectObj) => {
   return project;
 };
 
+export const saveEditedProject = async (projectId, updatedProjectObj) => {
+  const editOptions = {
+    method: "PUT",
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify(updatedProjectObj),
+  };
+
+  let res = await fetch(
+    `http://localhost:8088/projects/${projectId}`,
+    editOptions
+  );
+};
+
 export const deleteProject = async (projectId) => {
   await deleteEmployeeProjectsByProjectId(projectId);
   const deleteOptions = {
@@ -30,4 +49,19 @@ export const deleteProject = async (projectId) => {
   };
 
   await fetch(`http://localhost:8088/projects/${projectId}`, deleteOptions);
+};
+
+export const editProject = async (projectId, updatedProjectObj) => {
+  const editOptions = {
+    method: "PUT",
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify(updatedProjectObj),
+  };
+
+  let res = await fetch(
+    `http://localhost:8088/projects/${projectId}`,
+    editOptions
+  );
 };

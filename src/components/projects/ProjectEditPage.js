@@ -1,19 +1,23 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import {
+  getProjectById,
+  saveEditedProject,
+} from "../../services/projectServices.js";
+import { useNavigate, useParams } from "react-router-dom";
 import "./Project.css";
 import { getAllClients } from "../../services/clientServices.js";
-import { saveNewProject } from "../../services/projectServices.js";
-import { useNavigate } from "react-router-dom";
 
-export const NewProject = () => {
+export const ProjectEditPage = () => {
   const [clients, setClients] = useState([]);
-  const [selectedClient, setSelectedClient] = useState(0);
+  const [project, setProject] = useState();
+  const [selectedClient, setSelectedClient] = useState();
   const [selectedProjectName, setSelectedProjectName] = useState("");
   const [selectedTimeLine, setSelectedTimeLine] = useState("");
   const [selectedMarket, setSelectedMarket] = useState("");
   const [selectedProduct, setSelectedProduct] = useState("");
   const [selectedBudget, setSelectedBudget] = useState(0);
   const [selectedDescription, setSelectedDescription] = useState("");
+  const { projectId } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -22,7 +26,13 @@ export const NewProject = () => {
     });
   }, []);
 
-  const handleAddNewProject = async (event) => {
+  useEffect(() => {
+    getProjectById(projectId).then((projectData) => {
+      setProject(projectData);
+    });
+  }, []);
+
+  const handleEditProject = async (event) => {
     event.preventDefault();
     const projectObj = {
       name: selectedProjectName,
@@ -33,14 +43,14 @@ export const NewProject = () => {
       budget: +selectedBudget,
       description: selectedDescription,
     };
-    saveNewProject(projectObj).then((res) => {
+    saveEditedProject(projectId, projectObj).then((res) => {
       navigate(`/projects`);
     });
   };
 
   return (
     <form className="profile">
-      <h2>Create New Project</h2>
+      <h2>Edit Project: {project?.name}</h2>
       <fieldset>
         <select
           className="form-dropdown"
@@ -98,8 +108,6 @@ export const NewProject = () => {
           />
         </div>
       </fieldset>
-      {/* change this to a dropdown with statelist 
-      https://shorturl.at/huV57 */}
       <fieldset>
         <div className="form-group">
           <label>Market</label>
@@ -113,8 +121,6 @@ export const NewProject = () => {
           />
         </div>
       </fieldset>
-      {/* make this type="date" and have a "from" and 
-      "to" input date? */}
       <fieldset>
         <div className="form-group">
           <label>Timeline</label>
@@ -143,8 +149,8 @@ export const NewProject = () => {
       </fieldset>
       <fieldset>
         <div className="form-btn">
-          <button className="form-btn btn-info" onClick={handleAddNewProject}>
-            Add New Project
+          <button className="form-btn btn-info" onClick={handleEditProject}>
+            Save
           </button>
         </div>
       </fieldset>

@@ -166,26 +166,6 @@
       "product": "InfluenceHub",
       "budget": 70000,
       "description": "Collaborate with influencers to expand the company's reach and brand awareness."
-    },
-    {
-      "id": 13,
-      "name": "Webinar Series Launch",
-      "clientId": 20,
-      "timeline": "2025-02-01 to 2025-06-30",
-      "market": "IL",
-      "product": "WebinarPro",
-      "budget": 55000,
-      "description": "Launch a series of webinars to educate and engage the target audience."
-    },
-    {
-      "id": 14,
-      "name": "Community Building Initiative",
-      "clientId": 4,
-      "timeline": "2025-03-15 to 2025-07-31",
-      "market": "US",
-      "product": "ConnectSphere",
-      "budget": 60000,
-      "description": "Build and foster a community around the company brand and products."
     }
   ],
   "clients": [
@@ -490,26 +470,6 @@
       "id": 24,
       "employeeId": 3,
       "projectId": 12
-    },
-    {
-      "id": 25,
-      "employeeId": 4,
-      "projectId": 13
-    },
-    {
-      "id": 26,
-      "employeeId": 5,
-      "projectId": 13
-    },
-    {
-      "id": 27,
-      "employeeId": 4,
-      "projectId": 14
-    },
-    {
-      "id": 28,
-      "employeeId": 5,
-      "projectId": 14
     },
     {
       "employeeId": 5,
