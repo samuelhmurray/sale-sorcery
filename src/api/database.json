@@ -218,7 +218,7 @@
       "id": 17
     },
     {
-      "name": "Mattel - YT awareness ",
+      "name": "Mattel - YT awareness",
       "clientId": 5,
       "timeline": "2025-01-01 to 2026-01-01",
       "market": "US",
@@ -228,7 +228,7 @@
       "id": 18
     },
     {
-      "name": "Nike - Meta ",
+      "name": "Nike - Meta",
       "clientId": 20,
       "timeline": "2025-10-01 to 2025-17-03",
       "market": "OR",
@@ -236,6 +236,16 @@
       "budget": 10000,
       "description": "Brand awareness ",
       "id": 19
+    },
+    {
+      "name": "Bose - TikTok Brand",
+      "clientId": 6,
+      "timeline": "2025-01-02 to 2026-01-02",
+      "market": "MA",
+      "product": "qc 45",
+      "budget": 10000,
+      "description": "Band awareness on TikTok",
+      "id": 20
     }
   ],
   "clients": [
@@ -562,19 +572,29 @@
       "projectId": 14
     },
     {
-      "id": 29,
-      "employeeId": 4,
-      "projectId": 15
-    },
-    {
-      "id": 30,
-      "employeeId": 5,
-      "projectId": 15
-    },
-    {
       "employeeId": 2,
-      "projectId": 4,
+      "projectId": 18,
+      "id": 29
+    },
+    {
+      "employeeId": 5,
+      "projectId": 5,
+      "id": 30
+    },
+    {
+      "employeeId": 5,
+      "projectId": 6,
       "id": 31
+    },
+    {
+      "employeeId": 5,
+      "projectId": 17,
+      "id": 32
+    },
+    {
+      "employeeId": 5,
+      "projectId": 20,
+      "id": 33
     }
   ]
 }
