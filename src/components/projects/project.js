@@ -5,6 +5,7 @@ import { formatToUSD } from "../../functions/formatUSD.js";
 import { ProjectClaim } from "./ProjectClaim.js";
 import { ProjectDelete } from "./ProjectDelete.js";
 import "./Project.css";
+import { ProjectEdit } from "./ProjectEditBtn.js";
 
 export const Project = ({ project, currentUser, getAndSetProjects }) => {
   return (
@@ -24,6 +25,11 @@ export const Project = ({ project, currentUser, getAndSetProjects }) => {
         getAndSetProjects={getAndSetProjects}
       />
       <ProjectDelete
+        project={project}
+        currentUser={currentUser}
+        getAndSetProjects={getAndSetProjects}
+      />
+      <ProjectEdit
         project={project}
         currentUser={currentUser}
         getAndSetProjects={getAndSetProjects}

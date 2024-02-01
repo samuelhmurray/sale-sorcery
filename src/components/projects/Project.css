@@ -36,6 +36,10 @@ form {
   .del-btn{
     background-color: darkred;
   }
+
+  .edit-btn{
+    background-color: darkgreen;
+  }
   
   .form-btn:focus {
     box-shadow: none;
