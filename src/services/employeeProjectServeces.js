@@ -9,15 +9,15 @@ export const addNewEmployeeProject = async (epObj) => {
   return await res.json();
 };
 
-export const deleteEmployeeProjectsByProjectId = async (projectId) => {
-  const deleteOptions = {
-    method: "DELETE",
-    headers: {
-      "content-type": "application/json",
-    },
-  };
-  await fetch(
-    `http://localhost:8088/employeeProjects?projectId=${projectId}`,
-    deleteOptions
-  );
-};
+// export const deleteEmployeeProjectsByProjectId = async (projectId) => {
+//   const deleteOptions = {
+//     method: "DELETE",
+//     headers: {
+//       "content-type": "application/json",
+//     },
+//   };
+//   await fetch(
+//     `http://localhost:8088/employeeProjects?projectId=${projectId}`,
+//     deleteOptions
+//   );
+// };

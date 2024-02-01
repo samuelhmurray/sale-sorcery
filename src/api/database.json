@@ -156,16 +156,6 @@
       "product": "LoyaltySphere",
       "budget": 60000,
       "description": "Develop and implement a program to improve customer retention and loyalty."
-    },
-    {
-      "id": 12,
-      "name": "Influencer Collaboration",
-      "clientId": 15,
-      "timeline": "2025-01-15 to 2025-05-31",
-      "market": "US",
-      "product": "InfluenceHub",
-      "budget": 70000,
-      "description": "Collaborate with influencers to expand the company's reach and brand awareness."
     }
   ],
   "clients": [
@@ -442,39 +432,14 @@
       "projectId": 9
     },
     {
-      "id": 19,
-      "employeeId": 2,
-      "projectId": 10
+      "employeeId": 5,
+      "projectId": 1,
+      "id": 33
     },
     {
       "id": 20,
       "employeeId": 3,
       "projectId": 10
-    },
-    {
-      "id": 21,
-      "employeeId": 2,
-      "projectId": 11
-    },
-    {
-      "id": 22,
-      "employeeId": 3,
-      "projectId": 11
-    },
-    {
-      "id": 23,
-      "employeeId": 2,
-      "projectId": 12
-    },
-    {
-      "id": 24,
-      "employeeId": 3,
-      "projectId": 12
-    },
-    {
-      "employeeId": 5,
-      "projectId": 1,
-      "id": 33
     }
   ]
 }

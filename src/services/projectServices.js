@@ -40,7 +40,7 @@ export const saveEditedProject = async (projectId, updatedProjectObj) => {
 };
 
 export const deleteProject = async (projectId) => {
-  await deleteEmployeeProjectsByProjectId(projectId);
+  // await deleteEmployeeProjectsByProjectId(projectId);
   const deleteOptions = {
     method: "DELETE",
     headers: {
