@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import "./Form.css";
+import "./Project.css";
 import { getAllClients } from "../../services/clientServices.js";
 import { saveNewproject } from "../../services/projectServices.js";
 import { useNavigate } from "react-router-dom";

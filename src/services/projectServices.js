@@ -1,3 +1,5 @@
+import { deleteEmployeeProjectsByProjectId } from "./employeeProjectServeces.js";
+
 export const getAllProjects = async () => {
   const res = await fetch(
     "http://localhost:8088/projects?_expand=client&_embed=employeeProjects"
@@ -18,8 +20,14 @@ export const saveNewproject = async (projectObj) => {
   return project;
 };
 
-// export const getProjectByUserId = () => {
-//   return fetch(
-//     "http://localhost:8088/projects?_expand=client&_embed=employeeProjects"
-//   ).then((res) => res.json());
-// };
+export const deleteProject = async (projectId) => {
+  await deleteEmployeeProjectsByProjectId(projectId);
+  const deleteOptions = {
+    method: "DELETE",
+    headers: {
+      "content-type": "application/json",
+    },
+  };
+
+  await fetch(`http://localhost:8088/projects/${projectId}`, deleteOptions);
+};

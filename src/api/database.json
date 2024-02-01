@@ -186,66 +186,6 @@
       "product": "ConnectSphere",
       "budget": 60000,
       "description": "Build and foster a community around the company brand and products."
-    },
-    {
-      "id": 15,
-      "name": "Brand Refresh Campaign",
-      "clientId": 19,
-      "timeline": "2025-04-01 to 2025-08-15",
-      "market": "MI",
-      "product": "BrandRevive",
-      "budget": 65000,
-      "description": "Refresh the company brand with a comprehensive marketing campaign."
-    },
-    {
-      "name": "Apple Brand",
-      "clientId": 3,
-      "timeline": "2025-01-01 to 2025-02-02",
-      "market": "US",
-      "product": "iPhone",
-      "budget": 10000,
-      "description": "iPhone brand awareness nationwide - google ads ",
-      "id": 16
-    },
-    {
-      "name": "Apple Holiday",
-      "clientId": 2,
-      "timeline": "2025-12-20 to 2025-01-01",
-      "market": "CA",
-      "product": "Macbook pro",
-      "budget": 10000,
-      "description": "Brand awareness holiday ",
-      "id": 17
-    },
-    {
-      "name": "Mattel - YT awareness",
-      "clientId": 5,
-      "timeline": "2025-01-01 to 2026-01-01",
-      "market": "US",
-      "product": "Barbie",
-      "budget": 10000,
-      "description": "Barbie brand bump",
-      "id": 18
-    },
-    {
-      "name": "Nike - Meta",
-      "clientId": 20,
-      "timeline": "2025-10-01 to 2025-17-03",
-      "market": "OR",
-      "product": "Men's running",
-      "budget": 10000,
-      "description": "Brand awareness ",
-      "id": 19
-    },
-    {
-      "name": "Bose - TikTok Brand",
-      "clientId": 6,
-      "timeline": "2025-01-02 to 2026-01-02",
-      "market": "MA",
-      "product": "qc 45",
-      "budget": 10000,
-      "description": "Band awareness on TikTok",
-      "id": 20
     }
   ],
   "clients": [
@@ -572,28 +512,8 @@
       "projectId": 14
     },
     {
-      "employeeId": 2,
-      "projectId": 18,
-      "id": 29
-    },
-    {
       "employeeId": 5,
-      "projectId": 5,
-      "id": 30
-    },
-    {
-      "employeeId": 5,
-      "projectId": 6,
-      "id": 31
-    },
-    {
-      "employeeId": 5,
-      "projectId": 17,
-      "id": 32
-    },
-    {
-      "employeeId": 5,
-      "projectId": 20,
+      "projectId": 1,
       "id": 33
     }
   ]
