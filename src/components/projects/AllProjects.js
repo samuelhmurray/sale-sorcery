@@ -3,7 +3,7 @@ import "../../App.css";
 import "./Project.css";
 
 import { getAllProjects } from "../../services/projectServices.js";
-import { Project } from "./Project.js";
+import { Project } from "./project.js";
 import { ProjectDelete } from "./ProjectDelete.js";
 
 export const AllProjects = ({ currentUser }) => {
