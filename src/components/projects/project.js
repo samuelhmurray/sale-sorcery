@@ -9,15 +9,15 @@ export const Project = ({ project, currentUser, getAndSetProjects }) => {
     const employeeProject = project.employeeProjects;
     const firstEmployeeProject = Array.isArray(employeeProject)
       ? employeeProject[0]
-      : employeeProject;
+      : undefined;
 
     const epObj = {
       employeeId: currentUser?.id,
-      projectId: firstEmployeeProject?.projectId,
+      projectId: firstEmployeeProject?.projectId || project.id,
     };
-    await addNewEmployeeProject(epObj).then(() => {
-      getAndSetProjects();
-    });
+
+    await addNewEmployeeProject(epObj);
+    getAndSetProjects();
   };
 
   return (
