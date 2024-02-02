@@ -3,8 +3,7 @@ import "../../App.css";
 import "./Project.css";
 
 import { getAllProjects } from "../../services/projectServices.js";
-import { Project } from "./Project.js";
-import { ProjectDelete } from "./ProjectDelete.js";
+import { Project } from "./project.js";
 
 export const AllProjects = ({ currentUser }) => {
   const [allProjects, setAllProjects] = useState([]);

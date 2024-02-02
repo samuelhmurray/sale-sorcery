@@ -1,23 +1,21 @@
 import React from "react";
 import "./Project.css";
-import { addNewEmployeeProject } from "../../services/employeeProjectServeces.js";
+import { addNewuserProject } from "../../services/userProjectServeces.js";
 
 export const ProjectClaim = ({ project, currentUser, getAndSetProjects }) => {
   const handleClaimBtn = async (project) => {
-    const newEmployeeProjectObj = {
-      employeeId: currentUser.id,
+    const newuserProjectObj = {
+      userId: currentUser.id,
       projectId: project.id,
     };
 
-    await addNewEmployeeProject(newEmployeeProjectObj);
+    await addNewuserProject(newuserProjectObj);
     getAndSetProjects();
   };
 
   return (
     <div>
-      {!project.employeeProjects.find(
-        (ep) => ep.employeeId === currentUser.id
-      ) && (
+      {!project.userProjects.find((ep) => ep.userId === currentUser.id) && (
         <button
           onClick={() => {
             handleClaimBtn(project);

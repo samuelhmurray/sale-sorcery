@@ -1,5 +1,5 @@
-export const addNewEmployeeProject = async (epObj) => {
-  const res = await fetch(`http://localhost:8088/employeeProjects`, {
+export const addNewuserProject = async (epObj) => {
+  const res = await fetch(`http://localhost:8088/userProjects`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -9,7 +9,7 @@ export const addNewEmployeeProject = async (epObj) => {
   return await res.json();
 };
 
-export const deleteEmployeeProjectsByProjectId = async (projectId) => {
+export const deleteuserProjectsByProjectId = async (projectId) => {
   const deleteOptions = {
     method: "DELETE",
     headers: {
@@ -17,7 +17,7 @@ export const deleteEmployeeProjectsByProjectId = async (projectId) => {
     },
   };
   await fetch(
-    `http://localhost:8088/employeeProjects?projectId=${projectId}`,
+    `http://localhost:8088/userProjects?projectId=${projectId}`,
     deleteOptions
   );
 };

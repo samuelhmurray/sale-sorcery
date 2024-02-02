@@ -13,8 +13,8 @@ export const Project = ({ project, currentUser, getAndSetProjects }) => {
       <Card.Title className="card-title">{project.name}</Card.Title>
       <Card.Text>
         Client Name:{" "}
-        <Link className="text-link" to={`/clients/${project.client.id}`}>
-          {project.client.firstName} {project.client.lastName}
+        <Link className="text-link" to={`/clients/${project.user.id}`}>
+          {project.user.firstName} {project.user.lastName}
         </Link>
       </Card.Text>
       <Card.Text>Market: {project.market}</Card.Text>

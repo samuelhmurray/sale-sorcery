@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
-import { getEmployeesByEmail } from "../../services/employeeServices.js";
+import { getUsersByEmail } from "../../services/userServices.js";
 
 export const Login = () => {
   const [email, set] = useState("bradley.williams@example.com");
@@ -10,7 +10,7 @@ export const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    getEmployeesByEmail(email).then((foundUsers) => {
+    getUsersByEmail(email).then((foundUsers) => {
       if (foundUsers.length === 1) {
         const user = foundUsers[0];
         localStorage.setItem(
@@ -18,6 +18,7 @@ export const Login = () => {
           JSON.stringify({
             id: user.id,
             isAdmin: user.isAdmin,
+            isEmployee: user.isEmployee,
           })
         );
         navigate("/projects");

@@ -9,9 +9,7 @@ export const ProjectDelete = ({ project, currentUser, getAndSetProjects }) => {
   };
   return (
     <div>
-      {project.employeeProjects.find(
-        (ep) => ep.employeeId === currentUser.id
-      ) && (
+      {project.userProjects.find((ep) => ep.userId === currentUser.id) && (
         <button
           className="form-btn del-btn"
           onClick={() => {

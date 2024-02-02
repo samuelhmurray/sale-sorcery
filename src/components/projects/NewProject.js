@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import "./Project.css";
-import { getAllClients } from "../../services/clientServices.js";
+import { getAllUsers } from "../../services/userServices.js";
 import { saveNewProject } from "../../services/projectServices.js";
 import { useNavigate } from "react-router-dom";
 
@@ -9,7 +9,8 @@ export const NewProject = () => {
   const [clients, setClients] = useState([]);
   const [selectedClient, setSelectedClient] = useState(0);
   const [selectedProjectName, setSelectedProjectName] = useState("");
-  const [selectedTimeLine, setSelectedTimeLine] = useState("");
+  const [selectedStartDate, setSelectedStartDate] = useState("");
+  const [selectedEndDate, setSelectedEndDate] = useState("");
   const [selectedMarket, setSelectedMarket] = useState("");
   const [selectedProduct, setSelectedProduct] = useState("");
   const [selectedBudget, setSelectedBudget] = useState(0);
@@ -17,8 +18,10 @@ export const NewProject = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    getAllClients().then((res) => {
-      setClients(res);
+    getAllUsers().then((res) => {
+      if (res.isEmployee === true) {
+        setClients(res);
+      }
     });
   }, []);
 
@@ -26,10 +29,12 @@ export const NewProject = () => {
     event.preventDefault();
     const projectObj = {
       name: selectedProjectName,
-      clientId: selectedClient,
-      timeline: selectedTimeLine,
+      userId: selectedClient,
+      startDate: selectedStartDate,
+      endDate: selectedEndDate,
       market: selectedMarket,
       product: selectedProduct,
+      currency: "USD",
       budget: +selectedBudget,
       description: selectedDescription,
     };
@@ -113,17 +118,28 @@ export const NewProject = () => {
           />
         </div>
       </fieldset>
-      {/* make this type="date" and have a "from" and 
-      "to" input date? */}
       <fieldset>
         <div className="form-group">
-          <label>Timeline</label>
+          <label>Start Date</label>
           <input
-            type="text"
+            type="date"
             className="form-control"
-            placeholder="Timeline"
+            placeholder="Start Date"
             onChange={(event) => {
-              setSelectedTimeLine(event.target.value);
+              setSelectedStartDate(event.target.value);
+            }}
+          />
+        </div>
+      </fieldset>
+      <fieldset>
+        <div className="form-group">
+          <label>End Date</label>
+          <input
+            type="date"
+            className="form-control"
+            placeholder="End Date"
+            onChange={(event) => {
+              setSelectedEndDate(event.target.value);
             }}
           />
         </div>

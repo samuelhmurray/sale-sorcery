@@ -1,38 +1,39 @@
 import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import { useParams } from "react-router-dom";
-import { getClientById } from "../../services/clientServices.js";
+import { getUserById } from "../../services/userServices.js";
 import { getAllProjects } from "../../services/projectServices.js";
 
-export const ClientDetails = ({ allClients }) => {
-  const [client, setClient] = useState([]);
+export const ClientDetails = () => {
+  const [client, setClient] = useState({});
   const [projects, setProjects] = useState([]);
+  const [clientsProjects, setClientsProjects] = useState([]);
   const { clientId } = useParams();
 
   useEffect(() => {
-    getClientById(clientId).then((clientObj) => {
+    getUserById(clientId).then((clientObj) => {
       setClient(clientObj);
     });
     getAllProjects().then((allProjects) => {
-      const clientProjects = allProjects.filter(
-        (project) => project.clientId === clientId
+      const filteredClientProjects = allProjects.filter(
+        (project) => project.userId === clientId
       );
-      setProjects(clientProjects);
+      setClientsProjects(filteredClientProjects);
     });
   }, [clientId]);
-
+  console.log(client);
   return (
     <>
       <Card className="card">
         <Card.Title className="card-title">
-          {client?.firstName} {client?.lastName}
+          {client.firstName} {client.lastName}
         </Card.Title>
         <Card.Text>Budget under managment: $xyz</Card.Text>
       </Card>
       <Card className="card">
-        <Card.Text>Title: {client?.title}</Card.Text>
-        <Card.Text>Phone: {client?.phone}</Card.Text>
-        <Card.Text>Email: {client?.email}</Card.Text>
+        <Card.Text>Title: {client.title}</Card.Text>
+        <Card.Text>Phone: {client.phone}</Card.Text>
+        <Card.Text>Email: {client.email}</Card.Text>
       </Card>
 
       {/* needs to be fixed  */}

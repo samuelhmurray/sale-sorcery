@@ -1,480 +1,431 @@
 {
-  "employees": [
+  "users": [
     {
       "id": 1,
-      "firstName": "Alexandra",
-      "lastName": "Johnson",
+      "firstName": "Stacy",
+      "lastName": "Joe",
       "title": "CEO",
-      "phone": "555-1111",
+      "phone": "123-456-7890",
       "email": "admin@admin.com",
-      "isAdmin": true
+      "companyId": 1,
+      "isAdmin": true,
+      "isEmployee": true
     },
     {
       "id": 2,
-      "firstName": "Bradley",
-      "lastName": "Williams",
-      "title": "Content Specialist",
-      "phone": "555-2222",
-      "email": "bradley.williams@example.com",
-      "isAdmin": false
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "title": "Marketing Manager",
+      "phone": "987-654-3210",
+      "email": "jane.smith@example.com",
+      "companyId": 1,
+      "isAdmin": false,
+      "isEmployee": true
     },
     {
       "id": 3,
-      "firstName": "Sophie",
-      "lastName": "Miller",
-      "title": "Social Media Specialist",
-      "phone": "555-3333",
-      "email": "sophie.miller@example.com",
-      "isAdmin": false
+      "firstName": "Bob",
+      "lastName": "Johnson",
+      "title": "QA Engineer",
+      "phone": "555-123-4567",
+      "email": "bob.johnson@example.com",
+      "companyId": 1,
+      "isAdmin": false,
+      "isEmployee": true
     },
     {
       "id": 4,
-      "firstName": "Jack",
-      "lastName": "Turner",
-      "title": "SEO Analyst",
-      "phone": "555-4444",
-      "email": "jack.turner@example.com",
-      "isAdmin": false
+      "firstName": "Alice",
+      "lastName": "Williams",
+      "title": "Marketing Coordinator",
+      "phone": "111-222-3333",
+      "email": "alice.williams@example.com",
+      "companyId": 1,
+      "isAdmin": true,
+      "isEmployee": true
     },
     {
       "id": 5,
-      "firstName": "Ava",
-      "lastName": "Harris",
-      "title": "Content Strategist",
-      "phone": "555-5555",
-      "email": "ava.harris@example.com",
-      "isAdmin": false
+      "firstName": "Charlie",
+      "lastName": "Brown",
+      "title": "Client Relations Specialist",
+      "phone": "999-888-7777",
+      "email": "charlie.brown@example.com",
+      "companyId": 1,
+      "isAdmin": false,
+      "isEmployee": true
+    },
+    {
+      "id": 6,
+      "firstName": "David",
+      "lastName": "Miller",
+      "title": "IT Support",
+      "phone": "444-555-6666",
+      "email": "david.miller@example.com",
+      "companyId": 3,
+      "isAdmin": false,
+      "isEmployee": false
+    },
+    {
+      "id": 7,
+      "firstName": "Eva",
+      "lastName": "Anderson",
+      "title": "Finance Manager",
+      "phone": "777-888-9999",
+      "email": "eva.anderson@example.com",
+      "companyId": 2,
+      "isAdmin": false,
+      "isEmployee": false
+    },
+    {
+      "id": 8,
+      "firstName": "Frank",
+      "lastName": "White",
+      "title": "Customer Support",
+      "phone": "123-987-6543",
+      "email": "frank.white@example.com",
+      "companyId": 3,
+      "isAdmin": false,
+      "isEmployee": false
+    },
+    {
+      "id": 9,
+      "firstName": "Grace",
+      "lastName": "Thomas",
+      "title": "Legal Counsel",
+      "phone": "321-456-7890",
+      "email": "grace.thomas@example.com",
+      "companyId": 4,
+      "isAdmin": false,
+      "isEmployee": false
+    },
+    {
+      "id": 10,
+      "firstName": "Henry",
+      "lastName": "Jones",
+      "title": "Operations Manager",
+      "phone": "555-333-2222",
+      "email": "henry.jones@example.com",
+      "companyId": 5,
+      "isAdmin": false,
+      "isEmployee": false
+    }
+  ],
+  "companies": [
+    {
+      "id": 1,
+      "name": "Rainbow Media Group"
+    },
+    {
+      "id": 2,
+      "name": "Coca-Cola"
+    },
+    {
+      "id": 3,
+      "name": "Apple"
+    },
+    {
+      "id": 4,
+      "name": "Microsoft"
+    },
+    {
+      "id": 5,
+      "name": "Google"
+    }
+  ],
+  "userProjects": [
+    {
+      "id": 1,
+      "userId": 1,
+      "projectId": 3
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "projectId": 6
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "projectId": 1
+    },
+    {
+      "id": 4,
+      "userId": 4,
+      "projectId": 8
+    },
+    {
+      "id": 5,
+      "userId": 5,
+      "projectId": 4
+    },
+    {
+      "id": 6,
+      "userId": 1,
+      "projectId": 9
+    },
+    {
+      "id": 7,
+      "userId": 2,
+      "projectId": 2
+    },
+    {
+      "id": 8,
+      "userId": 3,
+      "projectId": 7
+    },
+    {
+      "id": 9,
+      "userId": 4,
+      "projectId": 5
+    },
+    {
+      "id": 10,
+      "userId": 5,
+      "projectId": 10
+    },
+    {
+      "id": 11,
+      "userId": 1,
+      "projectId": 3
+    },
+    {
+      "id": 12,
+      "userId": 2,
+      "projectId": 6
+    },
+    {
+      "id": 13,
+      "userId": 3,
+      "projectId": 1
+    },
+    {
+      "id": 14,
+      "userId": 4,
+      "projectId": 8
+    },
+    {
+      "id": 15,
+      "userId": 5,
+      "projectId": 4
+    },
+    {
+      "id": 16,
+      "userId": 1,
+      "projectId": 9
+    },
+    {
+      "id": 17,
+      "userId": 2,
+      "projectId": 2
+    },
+    {
+      "id": 18,
+      "userId": 3,
+      "projectId": 7
+    },
+    {
+      "id": 19,
+      "userId": 4,
+      "projectId": 5
+    },
+    {
+      "id": 20,
+      "userId": 5,
+      "projectId": 10
+    },
+    {
+      "userId": 1,
+      "projectId": 10,
+      "id": 21
     }
   ],
   "projects": [
     {
       "id": 1,
-      "name": "Marketing Campaign Redesign",
-      "clientId": 5,
-      "timeline": "2024-02-01 to 2024-04-30",
-      "market": "NY",
-      "product": "Innovative Widget",
-      "budget": 50000,
-      "description": "Revamp the company's marketing campaign strategies."
-    },
-    {
-      "id": 2,
-      "name": "Website Optimization",
-      "clientId": 7,
-      "timeline": "2024-03-15 to 2024-06-30",
-      "market": "CA",
-      "product": "Digital Experience Platform",
-      "budget": 30000,
-      "description": "Optimize the company website for better performance and user experience."
-    },
-    {
-      "id": 3,
-      "name": "Social Media Engagement",
-      "clientId": 11,
-      "timeline": "2024-04-01 to 2024-07-15",
-      "market": "TX",
-      "product": "Engagement App",
-      "budget": 40000,
-      "description": "Increase social media engagement through strategic content and interactions."
-    },
-    {
-      "id": 4,
-      "name": "SEO Improvement",
-      "clientId": 14,
-      "timeline": "2024-05-10 to 2024-08-31",
-      "market": "FL",
-      "product": "SearchBoost Suite",
-      "budget": 60000,
-      "description": "Enhance the company's search engine optimization strategies."
-    },
-    {
-      "id": 5,
-      "name": "Content Marketing Initiative",
-      "clientId": 18,
-      "timeline": "2024-06-01 to 2024-09-15",
-      "market": "AZ",
-      "product": "StoryCraft Pro",
-      "budget": 45000,
-      "description": "Launch a new content marketing initiative to attract and engage the target audience."
-    },
-    {
-      "id": 6,
-      "name": "Public Relations Campaign",
-      "clientId": 2,
-      "timeline": "2024-07-15 to 2024-10-31",
-      "market": "US",
-      "product": "Brand Amplifier",
-      "budget": 70000,
-      "description": "Develop and execute a public relations campaign to enhance the company's image."
-    },
-    {
-      "id": 7,
-      "name": "Digital Marketing Expansion",
-      "clientId": 8,
-      "timeline": "2024-08-01 to 2024-11-30",
-      "market": "OH",
-      "product": "Digital Horizon",
-      "budget": 55000,
-      "description": "Expand the company's digital marketing efforts to new platforms and channels."
-    },
-    {
-      "id": 8,
-      "name": "Social Media Analytics Implementation",
-      "clientId": 13,
-      "timeline": "2024-09-10 to 2024-12-31",
-      "market": "GA",
-      "product": "AnalyticsPro",
-      "budget": 48000,
-      "description": "Implement analytics tools to track and analyze social media performance."
-    },
-    {
-      "id": 9,
-      "name": "Email Marketing Overhaul",
-      "clientId": 17,
-      "timeline": "2024-10-01 to 2025-01-31",
-      "market": "WA",
-      "product": "Inbox Revolution",
-      "budget": 65000,
-      "description": "Overhaul the company's email marketing strategy for better engagement and conversion."
-    },
-    {
-      "id": 10,
-      "name": "Video Content Production",
-      "clientId": 3,
-      "timeline": "2024-11-15 to 2025-03-15",
-      "market": "NC",
-      "product": "VisualStory Master",
+      "name": "Celestial Odyssey Brand",
+      "userId": 6,
+      "startDate": "2024-08-01",
+      "endDate": "2024-10-30",
+      "market": "CO",
+      "product": "Ethereal Elixer",
+      "currency": "USD",
       "budget": 75000,
-      "description": "Produce high-quality video content for marketing and promotional purposes."
+      "description": "description"
     },
     {
-      "id": 11,
-      "name": "Customer Retention Program",
-      "clientId": 10,
-      "timeline": "2024-12-01 to 2025-04-30",
-      "market": "PA",
-      "product": "LoyaltySphere",
+      "id": 2,
+      "name": "Celestial Odyssey Launch",
+      "userId": 7,
+      "startDate": "2024-07-01",
+      "endDate": "2024-09-30",
+      "market": "NY",
+      "product": "Ethereal Elixer",
+      "currency": "USD",
+      "budget": 75000,
+      "description": "description"
+    },
+    {
+      "id": 3,
+      "name": "Digital Dreamscape Strategy",
+      "userId": 8,
+      "startDate": "2024-04-01",
+      "endDate": "2024-06-30",
+      "market": "TX",
+      "product": "Quantum Quasar",
+      "currency": "USD",
       "budget": 60000,
-      "description": "Develop and implement a program to improve customer retention and loyalty."
+      "description": "description"
     },
     {
-      "id": 12,
-      "name": "Influencer Collaboration",
-      "clientId": 15,
-      "timeline": "2025-01-15 to 2025-05-31",
-      "market": "US",
-      "product": "InfluenceHub",
+      "id": 4,
+      "name": "Social Synchronicity Blitz",
+      "userId": 9,
+      "startDate": "2024-10-01",
+      "endDate": "2024-12-31",
+      "market": "FL",
+      "product": "LuminaLux",
+      "currency": "USD",
+      "budget": 45000,
+      "description": "description"
+    },
+    {
+      "id": 5,
+      "name": "Stellar Unveiling Event",
+      "userId": 10,
+      "startDate": "2024-07-01",
+      "endDate": "2024-09-30",
+      "market": "IL",
+      "product": "Celestial Serenity",
+      "currency": "USD",
+      "budget": 80000,
+      "description": "description"
+    },
+    {
+      "id": 6,
+      "name": "Pacific Panorama Campaign",
+      "userId": 6,
+      "startDate": "2024-04-01",
+      "endDate": "2024-06-30",
+      "market": "WA",
+      "product": "Oceanic Oasis",
+      "currency": "USD",
+      "budget": 55000,
+      "description": "description"
+    },
+    {
+      "id": 7,
+      "name": "Harmony Haven Emails",
+      "userId": 7,
+      "startDate": "2024-10-01",
+      "endDate": "2024-12-31",
+      "market": "GA",
+      "product": "Serenity Sips",
+      "currency": "USD",
       "budget": 70000,
-      "description": "Collaborate with influencers to expand the company's reach and brand awareness."
-    }
-  ],
-  "clients": [
-    {
-      "id": 1,
-      "firstName": "Eleanor",
-      "lastName": "Baxter",
-      "title": "Marketing Director",
-      "phone": "555-1234",
-      "isAdmin": false,
-      "email": "eleanor.baxter@example.com"
-    },
-    {
-      "id": 2,
-      "firstName": "Victor",
-      "lastName": "Harrison",
-      "title": "Chief Digital Officer",
-      "phone": "555-5678",
-      "isAdmin": false,
-      "email": "victor.harrison@example.com"
-    },
-    {
-      "id": 3,
-      "firstName": "Sophia",
-      "lastName": "Lee",
-      "title": "Social Media Manager",
-      "phone": "555-9876",
-      "isAdmin": false,
-      "email": "sophia.lee@example.com"
-    },
-    {
-      "id": 4,
-      "firstName": "David",
-      "lastName": "Perez",
-      "title": "SEO Specialist",
-      "phone": "555-4321",
-      "isAdmin": false,
-      "email": "david.perez@example.com"
-    },
-    {
-      "id": 5,
-      "firstName": "Emma",
-      "lastName": "Thompson",
-      "title": "Content Strategist",
-      "phone": "555-8765",
-      "isAdmin": false,
-      "email": "emma.thompson@example.com"
-    },
-    {
-      "id": 6,
-      "firstName": "Lucas",
-      "lastName": "Fleming",
-      "title": "Marketing Coordinator",
-      "phone": "555-1122",
-      "isAdmin": false,
-      "email": "lucas.fleming@example.com"
-    },
-    {
-      "id": 7,
-      "firstName": "Olivia",
-      "lastName": "Ward",
-      "title": "Public Relations Specialist",
-      "phone": "555-3344",
-      "isAdmin": false,
-      "email": "olivia.ward@example.com"
+      "description": "description"
     },
     {
       "id": 8,
-      "firstName": "Cameron",
-      "lastName": "Barnes",
-      "title": "Digital Marketing Manager",
-      "phone": "555-5566",
-      "isAdmin": false,
-      "email": "cameron.barnes@example.com"
+      "name": "SEO Symphony Optimization",
+      "userId": 8,
+      "startDate": "2024-07-01",
+      "endDate": "2024-09-30",
+      "market": "OH",
+      "product": "OptiMax Blend",
+      "currency": "USD",
+      "budget": 65000,
+      "description": "description"
     },
     {
       "id": 9,
-      "firstName": "Harper",
-      "lastName": "Morrison",
-      "title": "Content Creator",
-      "phone": "555-7788",
-      "isAdmin": false,
-      "email": "harper.morrison@example.com"
+      "name": "Influencer Illumination Collab",
+      "userId": 9,
+      "startDate": "2024-04-01",
+      "endDate": "2024-06-30",
+      "market": "PA",
+      "product": "Luminosity Lift",
+      "currency": "USD",
+      "budget": 50000,
+      "description": "description"
     },
     {
       "id": 10,
-      "firstName": "Logan",
-      "lastName": "Bryant",
-      "title": "Social Media Specialist",
-      "phone": "555-9900",
-      "isAdmin": false,
-      "email": "logan.bryant@example.com"
-    },
-    {
-      "id": 11,
-      "firstName": "Madison",
-      "lastName": "Wells",
-      "title": "SEO Analyst",
-      "phone": "555-1122",
-      "isAdmin": false,
-      "email": "madison.wells@example.com"
-    },
-    {
-      "id": 12,
-      "firstName": "Avery",
-      "lastName": "Murray",
-      "title": "Marketing Coordinator",
-      "phone": "555-3344",
-      "isAdmin": false,
-      "email": "avery.murray@example.com"
-    },
-    {
-      "id": 13,
-      "firstName": "Elijah",
-      "lastName": "Ferguson",
-      "title": "Content Strategist",
-      "phone": "555-5566",
-      "isAdmin": false,
-      "email": "elijah.ferguson@example.com"
-    },
-    {
-      "id": 14,
-      "firstName": "Aria",
-      "lastName": "Gordon",
-      "title": "Digital Marketing Manager",
-      "phone": "555-7788",
-      "isAdmin": false,
-      "email": "aria.gordon@example.com"
-    },
-    {
-      "id": 15,
-      "firstName": "Jackson",
-      "lastName": "Rose",
-      "title": "Social Media Specialist",
-      "phone": "555-9900",
-      "isAdmin": false,
-      "email": "jackson.rose@example.com"
-    },
-    {
-      "id": 16,
-      "firstName": "Scarlett",
-      "lastName": "Hunt",
-      "title": "SEO Specialist",
-      "phone": "555-1122",
-      "isAdmin": false,
-      "email": "scarlett.hunt@example.com"
-    },
-    {
-      "id": 17,
-      "firstName": "Leo",
-      "lastName": "Carroll",
-      "title": "Marketing Director",
-      "phone": "555-3344",
-      "isAdmin": false,
-      "email": "leo.carroll@example.com"
-    },
-    {
-      "id": 18,
-      "firstName": "Lila",
-      "lastName": "Mills",
-      "title": "Chief Digital Officer",
-      "phone": "555-5566",
-      "isAdmin": false,
-      "email": "lila.mills@example.com"
-    },
-    {
-      "id": 19,
-      "firstName": "Grayson",
-      "lastName": "Reyes",
-      "title": "Social Media Manager",
-      "phone": "555-7788",
-      "isAdmin": false,
-      "email": "grayson.reyes@example.com"
-    },
-    {
-      "id": 20,
-      "firstName": "Amelia",
-      "lastName": "Fisher",
-      "title": "SEO Analyst",
-      "phone": "555-9900",
-      "isAdmin": false,
-      "email": "amelia.fisher@example.com"
+      "name": "Content Constellation Strategy",
+      "userId": 10,
+      "startDate": "2024-10-01",
+      "endDate": "2024-12-31",
+      "market": "NC",
+      "product": "Stellar Synergy",
+      "currency": "USD",
+      "budget": 75000,
+      "description": "description"
     }
   ],
-  "employeeProjects": [
+  "projectPlatforms": [
     {
       "id": 1,
-      "employeeId": 1,
+      "platformId": 1,
       "projectId": 1
     },
     {
       "id": 2,
-      "employeeId": 2,
-      "projectId": 1
+      "platformId": 2,
+      "projectId": 2
     },
     {
       "id": 3,
-      "employeeId": 1,
-      "projectId": 2
+      "platformId": 3,
+      "projectId": 3
     },
     {
       "id": 4,
-      "employeeId": 2,
-      "projectId": 2
+      "platformId": 1,
+      "projectId": 4
     },
     {
       "id": 5,
-      "employeeId": 1,
-      "projectId": 3
+      "platformId": 2,
+      "projectId": 5
     },
     {
       "id": 6,
-      "employeeId": 2,
-      "projectId": 3
+      "platformId": 3,
+      "projectId": 6
     },
     {
       "id": 7,
-      "employeeId": 3,
-      "projectId": 4
+      "platformId": 1,
+      "projectId": 7
     },
     {
       "id": 8,
-      "employeeId": 4,
-      "projectId": 4
+      "platformId": 2,
+      "projectId": 8
     },
     {
       "id": 9,
-      "employeeId": 3,
-      "projectId": 5
+      "platformId": 3,
+      "projectId": 9
     },
     {
       "id": 10,
-      "employeeId": 4,
-      "projectId": 5
-    },
-    {
-      "id": 11,
-      "employeeId": 3,
-      "projectId": 6
-    },
-    {
-      "id": 12,
-      "employeeId": 4,
-      "projectId": 6
-    },
-    {
-      "id": 13,
-      "employeeId": 5,
-      "projectId": 7
-    },
-    {
-      "id": 14,
-      "employeeId": 1,
-      "projectId": 7
-    },
-    {
-      "id": 15,
-      "employeeId": 5,
-      "projectId": 8
-    },
-    {
-      "id": 16,
-      "employeeId": 1,
-      "projectId": 8
-    },
-    {
-      "id": 17,
-      "employeeId": 5,
-      "projectId": 9
-    },
-    {
-      "id": 18,
-      "employeeId": 1,
-      "projectId": 9
-    },
-    {
-      "id": 19,
-      "employeeId": 2,
+      "platformId": 1,
       "projectId": 10
+    }
+  ],
+  "platforms": [
+    {
+      "id": 1,
+      "name": "Meta"
     },
     {
-      "id": 20,
-      "employeeId": 3,
-      "projectId": 10
+      "id": 2,
+      "name": "Google"
     },
     {
-      "id": 21,
-      "employeeId": 2,
-      "projectId": 11
-    },
-    {
-      "id": 22,
-      "employeeId": 3,
-      "projectId": 11
-    },
-    {
-      "id": 23,
-      "employeeId": 2,
-      "projectId": 12
-    },
-    {
-      "id": 24,
-      "employeeId": 3,
-      "projectId": 12
-    },
-    {
-      "employeeId": 5,
-      "projectId": 1,
-      "id": 33
+      "id": 3,
+      "name": "Other"
     }
   ]
 }

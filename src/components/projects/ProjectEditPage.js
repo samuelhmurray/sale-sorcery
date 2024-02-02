@@ -5,7 +5,7 @@ import {
 } from "../../services/projectServices.js";
 import { useNavigate, useParams } from "react-router-dom";
 import "./Project.css";
-import { getAllClients } from "../../services/clientServices.js";
+import { getAllUsers } from "../../services/userServices.js";
 
 export const ProjectEditPage = () => {
   const [clients, setClients] = useState([]);
@@ -21,7 +21,7 @@ export const ProjectEditPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    getAllClients().then((res) => {
+    getAllUsers().then((res) => {
       setClients(res);
     });
   }, []);
