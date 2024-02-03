@@ -3,6 +3,7 @@ import { Card } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { getUserById } from "../../services/userServices.js";
 import { getAllProjects } from "../../services/projectServices.js";
+import "../../output.css";
 
 export const ClientDetails = () => {
   const [client, setClient] = useState({});

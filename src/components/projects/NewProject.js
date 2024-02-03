@@ -1,15 +1,10 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import "./Project.css";
+import "../../output.css";
 import { getAllUsers } from "../../services/userServices.js";
 import { saveNewProject } from "../../services/projectServices.js";
 import { useNavigate } from "react-router-dom";
-// import {
-//   SingleInputDateRangeField,
-//   DateRangePicker,
-// } from "@mui/x-date-pickers";
-// import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-// import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
 export const NewProject = () => {
   const [clients, setClients] = useState([]);

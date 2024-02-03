@@ -1,5 +1,6 @@
 import React from "react";
 import "./Project.css";
+import "../../output.css";
 import { addNewuserProject } from "../../services/userProjectServeces.js";
 
 export const ProjectClaim = ({ project, currentUser, getAndSetProjects }) => {

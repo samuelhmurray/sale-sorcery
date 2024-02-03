@@ -6,6 +6,7 @@ import {
 import { useNavigate, useParams } from "react-router-dom";
 import "./Project.css";
 import { getAllUsers } from "../../services/userServices.js";
+import "../../output.css";
 
 export const ProjectEditPage = () => {
   const [clients, setClients] = useState([]);
@@ -36,14 +37,16 @@ export const ProjectEditPage = () => {
     event.preventDefault();
     const projectObj = {
       name: selectedProjectName,
-      clientId: selectedClient,
-      timeline: selectedTimeLine,
+      userId: selectedClient,
+      startDate: selectedStartDate,
+      endDate: selectedEndDate,
       market: selectedMarket,
       product: selectedProduct,
+      currency: "USD",
       budget: +selectedBudget,
       description: selectedDescription,
     };
-    saveEditedProject(projectId, projectObj).then((res) => {
+    saveEditedProject(projectId, projectObj).then(() => {
       navigate(`/projects`);
     });
   };

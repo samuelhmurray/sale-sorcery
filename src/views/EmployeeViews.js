@@ -5,6 +5,7 @@ import { Outlet, Route, Routes } from "react-router-dom";
 import { ClientDetails } from "../components/clients/ClientDetails.js";
 import { NewProject } from "../components/projects/NewProject.js";
 import { useEffect, useState } from "react";
+import "../output.css";
 
 export const EmployeeViews = () => {
   const [currentUser, setCurrentUser] = useState({});

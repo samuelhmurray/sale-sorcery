@@ -1,15 +1,15 @@
-.navbar {
+/* .navbar {
   display: flex;
   flex-wrap: nowrap;
   background-color:#262626;
   margin: 0;
   width: 100%;
   padding: 0.5rem;
-}
-
+} */
+/* 
 .navbar-item {
   flex-basis: 10%;
-  list-style-type: none;
+  list-style-type: none; 
   text-align: center;
 }
 
@@ -35,4 +35,4 @@
 
 a {
   color: white;
-}
+} */

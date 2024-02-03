@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
+import "../../output.css";
 import { getUsersByEmail } from "../../services/userServices.js";
 
 export const Login = () => {

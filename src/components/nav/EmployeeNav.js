@@ -1,28 +1,29 @@
 import React from "react";
-import "./Nav.css";
+import "../../output.css";
+
 import { Link } from "react-router-dom";
 
 export const EmployeeNav = () => {
   return (
-    <ul className="navbar">
-      <li className="navbar-item text-primary">
-        <Link className="navbar-link" to="/projects">
+    <ul class="flex">
+      <li class="">
+        <Link class="" to="/projects">
           Projects
         </Link>
       </li>
-      <li className="navbar-item">
-        <Link className="navbar-link" to="/clients">
+      <li class="">
+        <Link class="" to="/clients">
           Clients
         </Link>
       </li>
-      <li className="navbar-item">
+      <li class="">
         <Link to="/newProject">
-          <button className="navbar-link-btn">+</button>
+          <button class="">+</button>
         </Link>
       </li>
-      <li className="navbar-item navbar-logout">
+      <li class="">
         <Link
-          className="navbar-link"
+          class=""
           to="/logIn"
           // onClick={() => {
           //   localStorage.removeItem("sales_user");
