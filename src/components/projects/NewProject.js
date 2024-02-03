@@ -4,6 +4,12 @@ import "./Project.css";
 import { getAllUsers } from "../../services/userServices.js";
 import { saveNewProject } from "../../services/projectServices.js";
 import { useNavigate } from "react-router-dom";
+// import {
+//   SingleInputDateRangeField,
+//   DateRangePicker,
+// } from "@mui/x-date-pickers";
+// import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+// import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
 export const NewProject = () => {
   const [clients, setClients] = useState([]);
@@ -16,10 +22,17 @@ export const NewProject = () => {
   const [selectedBudget, setSelectedBudget] = useState(0);
   const [selectedDescription, setSelectedDescription] = useState("");
   const navigate = useNavigate();
+  const [dateRange, setDateRange] = useState([
+    {
+      startDate: new Date(),
+      endDate: new Date(),
+      key: "selection",
+    },
+  ]);
 
   useEffect(() => {
     getAllUsers().then((res) => {
-      if (res.isEmployee === true) {
+      if (Array.isArray(res) && res[0]?.isEmployee) {
         setClients(res);
       }
     });
@@ -27,6 +40,10 @@ export const NewProject = () => {
 
   const handleAddNewProject = async (event) => {
     event.preventDefault();
+
+    const selectedStartDate = dateRange[0].startDate;
+    const selectedEndDate = dateRange[0].endDate;
+
     const projectObj = {
       name: selectedProjectName,
       userId: selectedClient,
@@ -120,28 +137,15 @@ export const NewProject = () => {
       </fieldset>
       <fieldset>
         <div className="form-group">
-          <label>Start Date</label>
-          <input
-            type="date"
-            className="form-control"
-            placeholder="Start Date"
-            onChange={(event) => {
-              setSelectedStartDate(event.target.value);
-            }}
-          />
-        </div>
-      </fieldset>
-      <fieldset>
-        <div className="form-group">
-          <label>End Date</label>
-          <input
-            type="date"
-            className="form-control"
-            placeholder="End Date"
-            onChange={(event) => {
-              setSelectedEndDate(event.target.value);
-            }}
-          />
+          <label>Timeline</label>
+          {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DemoContainer components={["SingleInputDateRangeField"]}>
+              <DateRangePicker
+                slots={{ field: SingleInputDateRangeField }}
+                name="allowedRange"
+              />
+            </DemoContainer>
+          </LocalizationProvider>{" "} */}
         </div>
       </fieldset>
       <fieldset>

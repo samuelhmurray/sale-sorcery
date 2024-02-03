@@ -180,11 +180,6 @@
       "projectId": 5
     },
     {
-      "id": 10,
-      "userId": 5,
-      "projectId": 10
-    },
-    {
       "id": 11,
       "userId": 1,
       "projectId": 3
@@ -228,16 +223,6 @@
       "id": 19,
       "userId": 4,
       "projectId": 5
-    },
-    {
-      "id": 20,
-      "userId": 5,
-      "projectId": 10
-    },
-    {
-      "userId": 1,
-      "projectId": 10,
-      "id": 21
     }
   ],
   "projects": [
@@ -348,18 +333,6 @@
       "currency": "USD",
       "budget": 50000,
       "description": "description"
-    },
-    {
-      "id": 10,
-      "name": "Content Constellation Strategy",
-      "userId": 10,
-      "startDate": "2024-10-01",
-      "endDate": "2024-12-31",
-      "market": "NC",
-      "product": "Stellar Synergy",
-      "currency": "USD",
-      "budget": 75000,
-      "description": "description"
     }
   ],
   "projectPlatforms": [
@@ -407,11 +380,6 @@
       "id": 9,
       "platformId": 3,
       "projectId": 9
-    },
-    {
-      "id": 10,
-      "platformId": 1,
-      "projectId": 10
     }
   ],
   "platforms": [
