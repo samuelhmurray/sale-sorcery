@@ -1,30 +1,36 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
 export const SideBar = () => {
   return (
-    <ul className="flex m-1 flex-nowrap bg-topbar text-slate-900">
-      <div
-        className="fixed top-0 left-0 h-screen w-28 flex flex-col
-                    bg-sidebar shadow-lg text-slate-50 items-center "
-      >
-        <li className="m-10 ">
+    <div className="flex">
+      <div className="fixed top-0 left-0 h-screen w-28 flex flex-col bg-sidebar shadow-lg text-slate-50 items-center">
+        <button className="m-10">
           <Link
-            className=" text-4xl w-20 h-20 border-8 border-topbar rounded-full flex items-center justify-center "
+            className="text-4xl w-20 h-20 border-8 border-topbar rounded-full flex items-center justify-center"
             to="/projects"
           >
             P
           </Link>
-        </li>
-        <li className="">
+        </button>
+        <button className="m-10">
           <Link
             className="text-4xl w-20 h-20 border-8 border-topbar rounded-full flex items-center justify-center"
             to="/clients"
           >
             C
           </Link>
-        </li>
+        </button>
+        <button className="m-10">
+          <Link
+            className="text-4xl w-20 h-20 border-8 border-topbar rounded-full flex items-center justify-center"
+            to="/logIn"
+          >
+            L
+          </Link>
+        </button>
       </div>
-    </ul>
+    </div>
   );
 };
 

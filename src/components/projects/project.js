@@ -16,7 +16,10 @@ export const Project = ({ project, currentUser, getAndSetProjects }) => {
       <div class="mb-2 font-bold text-xl">{project.name}</div>
       <div>
         Client Name:{" "}
-        <Link className="text-link" to={`/clients/${project.user.id}`}>
+        <Link
+          class="text-sky-950 hover:text-sky-600"
+          to={`/clients/${project.user.id}`}
+        >
           {project.user.firstName} {project.user.lastName}
         </Link>
       </div>
