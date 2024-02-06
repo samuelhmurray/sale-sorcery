@@ -20,15 +20,17 @@ export const AllProjects = ({ currentUser }) => {
 
   return (
     <>
-      <div className="card-container">
+      <div class="flex flex-wrap ml-40">
         {allProjects.map((project) => {
           return (
-            <Project
-              key={`project-${project.id}`}
-              project={project}
-              currentUser={currentUser}
-              getAndSetProjects={getAndSetProjects}
-            />
+            <div>
+              <Project
+                key={`project-${project.id}`}
+                project={project}
+                currentUser={currentUser}
+                getAndSetProjects={getAndSetProjects}
+              />
+            </div>
           );
         })}
       </div>

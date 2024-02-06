@@ -8,7 +8,7 @@ export const ProjectEditBtn = ({ project, currentUser }) => {
     <div>
       {project.userProjects.find((ep) => ep.userId === currentUser.id) && (
         <button
-          class=""
+          class="bg-edit hover:bg-hoveredit font-bold py1 px-4 rounded"
           onClick={() => {
             navigate(`/editProject/${project.id}`);
           }}

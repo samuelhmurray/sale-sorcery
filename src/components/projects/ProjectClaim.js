@@ -21,7 +21,7 @@ export const ProjectClaim = ({ project, currentUser, getAndSetProjects }) => {
           onClick={() => {
             handleClaimBtn(project);
           }}
-          className="form-btn claim-btn"
+          class="bg-claim hover:bg-hoverclaim font-bold py1 px-4 rounded"
         >
           Claim
         </button>

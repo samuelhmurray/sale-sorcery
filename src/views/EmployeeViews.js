@@ -6,6 +6,7 @@ import { ClientDetails } from "../components/clients/ClientDetails.js";
 import { NewProject } from "../components/projects/NewProject.js";
 import { useEffect, useState } from "react";
 import "../output.css";
+import { SideBar } from "../components/nav/SideBar.js";
 
 export const EmployeeViews = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -23,6 +24,8 @@ export const EmployeeViews = () => {
         element={
           <>
             <EmployeeNav />
+            <SideBar />
+
             <Outlet />
           </>
         }

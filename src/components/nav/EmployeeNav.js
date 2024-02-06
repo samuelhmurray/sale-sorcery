@@ -5,33 +5,18 @@ import { Link } from "react-router-dom";
 
 export const EmployeeNav = () => {
   return (
-    <ul class="flex">
-      <li class="">
-        <Link class="" to="/projects">
-          Projects
-        </Link>
-      </li>
-      <li class="">
-        <Link class="" to="/clients">
-          Clients
-        </Link>
-      </li>
-      <li class="">
-        <Link to="/newProject">
-          <button class="">+</button>
-        </Link>
-      </li>
-      <li class="">
-        <Link
-          class=""
-          to="/logIn"
-          // onClick={() => {
-          //   localStorage.removeItem("sales_user");
-          // }}
-        >
-          Logout
-        </Link>
-      </li>
+    <ul className="flex m-0 flex-nowrap bg-topbar p-5 text-slate-900">
+      <div class="ml-28">hello</div>
+      <div className="flex ml-auto">
+        <li className="text-xl mr-4">
+          <Link to="/newProject">
+            <button className="">+</button>
+          </Link>
+        </li>
+        <li className="text-xl">
+          <Link to="/logIn">Logout</Link>
+        </li>
+      </div>
     </ul>
   );
 };

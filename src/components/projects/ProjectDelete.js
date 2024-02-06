@@ -12,7 +12,7 @@ export const ProjectDelete = ({ project, currentUser, getAndSetProjects }) => {
     <div>
       {project.userProjects.find((ep) => ep.userId === currentUser.id) && (
         <button
-          className="form-btn del-btn"
+          class="bg-delete hover:bg-hoverdelete font-bold py1 px-4 rounded"
           onClick={() => {
             handleDelete(project);
           }}
