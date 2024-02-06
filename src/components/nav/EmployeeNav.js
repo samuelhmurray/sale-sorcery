@@ -3,11 +3,10 @@ import "../../output.css";
 
 import { Link } from "react-router-dom";
 
-export const EmployeeNav = () => {
+export const EmployeeNav = ({ title }) => {
   return (
     <ul className="flex m-0 flex-nowrap bg-topbar p-5 text-slate-900">
-      {/* need to do an if statment here?  */}
-      <div class="ml-28 text-8xl">NAME OF PAGE</div>
+      <div class="ml-28 text-8xl">{title}</div>
 
       <div className="flex ml-auto">
         <li className="mr-8">

@@ -5,7 +5,7 @@ import { getUserById } from "../../services/userServices.js";
 import { getAllProjects } from "../../services/projectServices.js";
 import "../../output.css";
 
-export const ClientDetails = () => {
+export const ClientDetails = ({ setTitle }) => {
   const [client, setClient] = useState({});
   const [projects, setProjects] = useState([]);
   const [clientsProjects, setClientsProjects] = useState([]);
@@ -22,7 +22,9 @@ export const ClientDetails = () => {
       setClientsProjects(filteredClientProjects);
     });
   }, [clientId]);
-  console.log(client);
+  const clientName = client.firstName + " " + client.lastName;
+  setTitle(clientName);
+
   return (
     <>
       <Card className="card">

@@ -6,7 +6,7 @@ import "../../output.css";
 import { getAllProjects } from "../../services/projectServices.js";
 import { Project } from "./project.js";
 
-export const AllProjects = ({ currentUser }) => {
+export const AllProjects = ({ currentUser, setTitle }) => {
   const [allProjects, setAllProjects] = useState([]);
 
   const getAndSetProjects = () => {
@@ -17,6 +17,7 @@ export const AllProjects = ({ currentUser }) => {
   useEffect(() => {
     getAndSetProjects();
   }, [currentUser]);
+  setTitle("All Projects");
 
   return (
     <>

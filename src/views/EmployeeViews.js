@@ -10,6 +10,7 @@ import { SideBar } from "../components/nav/SideBar.js";
 
 export const EmployeeViews = () => {
   const [currentUser, setCurrentUser] = useState({});
+  const [title, setTitle] = useState("");
 
   useEffect(() => {
     const localSaleUser = localStorage.getItem("sale_user");
@@ -23,7 +24,7 @@ export const EmployeeViews = () => {
         path="/"
         element={
           <>
-            <EmployeeNav />
+            <EmployeeNav title={title} />
             <SideBar />
 
             <Outlet />
@@ -32,13 +33,18 @@ export const EmployeeViews = () => {
       >
         <Route
           path="projects"
-          element={<AllProjects currentUser={currentUser} />}
+          element={
+            <AllProjects setTitle={setTitle} currentUser={currentUser} />
+          }
         />
         <Route path="clients">
-          <Route index element={<AllClients />} />
-          <Route path=":clientId" element={<ClientDetails />} />
+          <Route index element={<AllClients setTitle={setTitle} />} />
+          <Route
+            path=":clientId"
+            element={<ClientDetails setTitle={setTitle} />}
+          />
         </Route>
-        <Route path="newProject" element={<NewProject />} />
+        <Route path="newProject" element={<NewProject setTitle={setTitle} />} />
       </Route>
     </Routes>
   );

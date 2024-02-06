@@ -6,7 +6,7 @@ import { getAllUsers } from "../../services/userServices.js";
 import { saveNewProject } from "../../services/projectServices.js";
 import { useNavigate } from "react-router-dom";
 
-export const NewProject = () => {
+export const NewProject = ({ setTitle }) => {
   const [clients, setClients] = useState([]);
   const [selectedClient, setSelectedClient] = useState(0);
   const [selectedProjectName, setSelectedProjectName] = useState("");
@@ -32,6 +32,8 @@ export const NewProject = () => {
       }
     });
   }, []);
+
+  setTitle("Add new Project");
 
   const handleAddNewProject = async (event) => {
     event.preventDefault();
