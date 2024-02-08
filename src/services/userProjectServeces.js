@@ -13,7 +13,7 @@ export const deleteuserProjectsByProjectId = async (projectId) => {
   const deleteOptions = {
     method: "DELETE",
     headers: {
-      "content-type": "application/json",
+      "Content-Type": "application/json",
     },
   };
   await fetch(

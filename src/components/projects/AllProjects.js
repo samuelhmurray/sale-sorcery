@@ -13,16 +13,16 @@ export const AllProjects = ({ currentUser, setTitle }) => {
     });
   };
   useEffect(() => {
+    setTitle("All Projects");
     getAndSetProjects();
-  }, [currentUser]);
-  setTitle("All Projects");
+  }, [currentUser, setTitle]);
 
   return (
     <>
-      <div class="flex flex-wrap ml-40">
+      <div className="flex flex-wrap ml-40">
         {allProjects.map((project) => {
           return (
-            <div>
+            <div key={`project-container-${project.id}`}>
               <Project
                 key={`project-${project.id}`}
                 project={project}

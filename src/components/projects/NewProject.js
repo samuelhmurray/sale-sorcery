@@ -17,13 +17,6 @@ export const NewProject = ({ setTitle }) => {
   const [selectedBudget, setSelectedBudget] = useState(0);
   const [selectedDescription, setSelectedDescription] = useState("");
   const navigate = useNavigate();
-  const [dateRange, setDateRange] = useState([
-    {
-      startDate: new Date(),
-      endDate: new Date(),
-      key: "selection",
-    },
-  ]);
 
   useEffect(() => {
     getAllUsers().then((res) => {
@@ -32,15 +25,11 @@ export const NewProject = ({ setTitle }) => {
         setClients(nonEmployees);
       }
     });
-  }, []);
-
-  setTitle("Add new Project");
+    setTitle("Add new Project");
+  }, [setTitle]);
 
   const handleAddNewProject = async (event) => {
     event.preventDefault();
-
-    const selectedStartDate = dateRange[0].startDate;
-    const selectedEndDate = dateRange[0].endDate;
 
     const projectObj = {
       name: selectedProjectName,
@@ -61,7 +50,7 @@ export const NewProject = ({ setTitle }) => {
   return (
     <div className="flex-nowrap  w-96 m-5 ml-40 mt-10 border-8 border-topbar rounded-3xl p-4">
       <select
-        class="text-text bg-edit hover:bg-hoveredit font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
+        className="text-text bg-edit hover:bg-hoveredit font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
         name="client"
         onChange={(event) => {
           setSelectedClient(+event.target.value);
@@ -79,28 +68,34 @@ export const NewProject = ({ setTitle }) => {
       </select>
 
       <div className="mt-5">
-        <label class="text-sm text-gray-500">Start Date</label>
-
+        <label className="text-sm text-gray-500">Start Date</label>
         <input
           type="date"
           id="small-input"
-          class="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           placeholder="Select date"
+          onChange={(event) => {
+            setSelectedStartDate(event.target.value);
+          }}
         />
       </div>
+
       <div className="mt-5">
-        <label class="text-sm text-gray-500">End Date</label>
+        <label className="text-sm text-gray-500">End Date</label>
         <input
           id="small-input"
           type="date"
-          class="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           placeholder="Select date"
+          onChange={(event) => {
+            setSelectedEndDate(event.target.value);
+          }}
         />
       </div>
 
       <div className="mt-5">
         <select
-          class=" bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-200 focus:border-blue-200 block w-full ps-10 p-2.5"
+          className=" bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-200 focus:border-blue-200 block w-full ps-10 p-2.5"
           id="small-input"
           name="market"
           onChange={(event) => {
@@ -122,7 +117,7 @@ export const NewProject = ({ setTitle }) => {
         <input
           type="text"
           id="small-input"
-          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-sm focus:ring-blue-300 focus:border-blue-300 "
+          className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-sm focus:ring-blue-300 focus:border-blue-300 "
           placeholder="Project Name"
           onChange={(event) => {
             setSelectedProjectName(event.target.value);
@@ -134,7 +129,7 @@ export const NewProject = ({ setTitle }) => {
         <input
           type="number"
           id="small-input"
-          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-sm focus:ring-blue-300 focus:border-blue-300 "
+          className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-sm focus:ring-blue-300 focus:border-blue-300 "
           placeholder="Budget"
           onChange={(event) => {
             setSelectedBudget(event.target.value);
@@ -146,7 +141,7 @@ export const NewProject = ({ setTitle }) => {
         <input
           type="text"
           id="small-input"
-          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-sm focus:ring-blue-300 focus:border-blue-300 "
+          className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-sm focus:ring-blue-300 focus:border-blue-300 "
           placeholder="Product name"
           onChange={(event) => {
             setSelectedProduct(event.target.value);
@@ -158,7 +153,7 @@ export const NewProject = ({ setTitle }) => {
         <input
           type="text"
           id="small-input"
-          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-sm focus:ring-blue-300 focus:border-blue-300 "
+          className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-sm focus:ring-blue-300 focus:border-blue-300 "
           placeholder="Description"
           onChange={(event) => {
             setSelectedDescription(event.target.value);
@@ -166,12 +161,8 @@ export const NewProject = ({ setTitle }) => {
         />
       </div>
 
-      <div>
-        <button
-          type="submit"
-          onClick={handleAddNewProject}
-          class="mt-5 px-3 py-2 text-sm font-medium text-center text-text bg-edit rounded-lg hover:bg-hoveredit focus:ring-4 focus:outline-none focus:ring-blue-300 "
-        >
+      <div className="mt-5 px-3 py-2 text-sm font-medium text-center text-text bg-edit rounded-lg hover:bg-hoveredit focus:ring-4 focus:outline-none focus:ring-blue-300 ">
+        <button type="submit" onClick={handleAddNewProject}>
           Add
         </button>
       </div>

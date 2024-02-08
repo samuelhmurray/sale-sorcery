@@ -7,7 +7,9 @@ export const getAllProjects = async () => {
   return await res.json();
 };
 export const getProjectById = async (projectId) => {
-  const res = await fetch(`http://localhost:8088/projects/${projectId}`);
+  const res = await fetch(
+    `http://localhost:8088/projects/${projectId}?_expand=user`
+  );
   return await res.json();
 };
 
@@ -15,7 +17,7 @@ export const saveNewProject = async (projectObj) => {
   const postOptions = {
     method: "POST",
     headers: {
-      "content-type": "application/json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(projectObj),
   };
@@ -28,7 +30,7 @@ export const saveEditedProject = async (projectId, updatedProjectObj) => {
   const editOptions = {
     method: "PUT",
     headers: {
-      "content-type": "application/json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(updatedProjectObj),
   };
@@ -44,7 +46,7 @@ export const deleteProject = async (projectId) => {
   const deleteOptions = {
     method: "DELETE",
     headers: {
-      "content-type": "application/json",
+      "Content-Type": "application/json",
     },
   };
 
@@ -55,7 +57,7 @@ export const editProject = async (projectId, updatedProjectObj) => {
   const editOptions = {
     method: "PUT",
     headers: {
-      "content-type": "application/json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(updatedProjectObj),
   };

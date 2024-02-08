@@ -238,116 +238,136 @@
       "userId": 5,
       "projectId": 7,
       "id": 25
+    },
+    {
+      "userId": 5,
+      "projectId": 3,
+      "id": 26
+    },
+    {
+      "userId": 5,
+      "projectId": 1,
+      "id": 28
+    },
+    {
+      "userId": 1,
+      "projectId": 5,
+      "id": 29
+    },
+    {
+      "userId": 1,
+      "projectId": 6,
+      "id": 30
     }
   ],
   "projects": [
     {
-      "id": 1,
       "name": "Celestial Odyssey Brand",
       "userId": 6,
       "startDate": "2024-08-01",
       "endDate": "2024-10-30",
-      "market": "CO",
+      "market": "CO - Colorado",
       "product": "Ethereal Elixer",
       "currency": "USD",
       "budget": 75000,
-      "description": "description"
+      "description": "A branding campaign for Ethereal Elixer targeting the CO market, running from August 1st to October 30th, with a budget of $75,000.",
+      "id": 1
     },
     {
-      "id": 2,
       "name": "Celestial Odyssey Launch",
       "userId": 7,
       "startDate": "2024-07-01",
       "endDate": "2024-09-30",
-      "market": "NY",
+      "market": "NY - New York",
       "product": "Ethereal Elixer",
       "currency": "USD",
-      "budget": 75000,
-      "description": "description"
+      "budget": 100000,
+      "description": "A branding campaign for Ethereal Elixer targeting the CO market, running from August 1st to October 30th, with a budget of $75,000.",
+      "id": 2
     },
     {
-      "id": 3,
       "name": "Digital Dreamscape Strategy",
-      "userId": 8,
+      "userId": 7,
       "startDate": "2024-04-01",
       "endDate": "2024-06-30",
-      "market": "TX",
+      "market": "DE - Delaware",
       "product": "Quantum Quasar",
       "currency": "USD",
       "budget": 60000,
-      "description": "description"
+      "description": "A strategic campaign for Quantum Quasar in the TX market, operating from April 1st to June 30th, with a budget of $60,000.",
+      "id": 3
     },
     {
-      "id": 4,
       "name": "Social Synchronicity Blitz",
-      "userId": 9,
+      "userId": 6,
       "startDate": "2024-10-01",
-      "endDate": "2024-12-31",
-      "market": "FL",
+      "endDate": "2024-12-20",
+      "market": "AL - Alabama",
       "product": "LuminaLux",
       "currency": "USD",
-      "budget": 45000,
-      "description": "description"
+      "budget": 100000,
+      "description": "A blitz campaign for LuminaLux in the FL market, set to run from October 1st to December 31st, with a budget of $45,000.",
+      "id": 4
     },
     {
-      "id": 5,
       "name": "Stellar Unveiling Event",
       "userId": 10,
       "startDate": "2024-07-01",
       "endDate": "2024-09-30",
-      "market": "IL",
+      "market": "IL - Illinois",
       "product": "Celestial Serenity",
       "currency": "USD",
       "budget": 80000,
-      "description": "description"
+      "description": "An event-based campaign for Celestial Serenity targeting the IL market, scheduled from July 1st to September 30th, with a budget of $80,000.",
+      "id": 5
     },
     {
-      "id": 6,
       "name": "Pacific Panorama Campaign",
       "userId": 6,
       "startDate": "2024-04-01",
       "endDate": "2024-06-30",
-      "market": "WA",
+      "market": "WA - Washington",
       "product": "Oceanic Oasis",
       "currency": "USD",
       "budget": 55000,
-      "description": "description"
+      "description": "A comprehensive campaign for Oceanic Oasis targeting the WA market, running from April 1st to June 30th, with a budget of $55,000.",
+      "id": 6
     },
     {
-      "id": 7,
       "name": "Harmony Haven Emails",
       "userId": 7,
       "startDate": "2024-10-01",
       "endDate": "2024-12-31",
-      "market": "GA",
+      "market": "GA - Georgia",
       "product": "Serenity Sips",
       "currency": "USD",
       "budget": 70000,
-      "description": "description"
+      "description": "An email marketing campaign for Serenity Sips targeting the GA market, running from October 1st to December 31st, with a budget of $70,000.",
+      "id": 7
     },
     {
-      "id": 8,
       "name": "SEO Symphony Optimization",
       "userId": 8,
       "startDate": "2024-07-01",
       "endDate": "2024-09-30",
-      "market": "OH",
+      "market": "OH - Ohio",
       "product": "OptiMax Blend",
       "currency": "USD",
       "budget": 65000,
-      "description": "description"
+      "description": "An SEO optimization campaign for OptiMax Blend targeting the OH market, scheduled from July 1st to September 30th, with a budget of $65,000",
+      "id": 8
     },
     {
-      "id": 9,
       "name": "Influencer Illumination Collab",
-      "userId": 9,
+      "userId": 8,
       "startDate": "2024-04-01",
       "endDate": "2024-06-30",
-      "market": "PA",
+      "market": "PA - Pennsylvania",
       "product": "Luminosity Lift",
       "currency": "USD",
       "budget": 50000,
-      "description": "description"
+      "description": "An influencer collaboration campaign for Luminosity Lift targeting the PA market, operating from April 1st to June 30th, with a budget of $50,000.",
+      "id": 9
     }
   ],
   "projectPlatforms": [

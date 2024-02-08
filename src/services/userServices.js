@@ -11,6 +11,6 @@ export const getAllUsers = () => {
 
 export const getUserById = (id) => {
   return fetch(
-    `http://localhost:8088/users/${id}?_expand=company&_embed=userProjects`
+    `http://localhost:8088/users/${id}?_expand=company&_embed=projects`
   ).then((res) => res.json());
 };

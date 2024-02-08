@@ -31,17 +31,17 @@ export const Login = () => {
     <div className="flex justify-center items-center h-screen">
       <main className="text-center block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow  ">
         <section>
-          <form class="" onSubmit={handleLogin}>
-            <h1 class="text-4xl">Sale Sorcery</h1>
-            <h2 class="mt-5 text-lg">Please sign in</h2>
+          <form className="" onSubmit={handleLogin}>
+            <h1 className="text-4xl">Sale Sorcery</h1>
+            <h2 className="mt-5 text-lg">Please sign in</h2>
 
-            <div class="flex justify-center">
+            <div className="flex justify-center">
               <input
                 onChange={(evt) => setEmail(evt.target.value)}
                 value={email}
                 type="email"
                 id="email"
-                class="text-center bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-200 focus:border-blue-200 block  w-72 p-2.5"
+                className="text-center bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-200 focus:border-blue-200 block  w-72 p-2.5"
                 placeholder="Email"
                 required
               />
@@ -51,7 +51,7 @@ export const Login = () => {
               <div className="">
                 <button
                   type="submit"
-                  class="mt-5 px-3 py-2 text-sm font-medium text-center text-text bg-edit rounded-lg hover:bg-hoveredit focus:ring-4 focus:outline-none focus:ring-blue-300 "
+                  className="mt-5 px-3 py-2 text-sm font-medium text-center text-text bg-edit rounded-lg hover:bg-hoveredit focus:ring-4 focus:outline-none focus:ring-blue-300 "
                 >
                   Sign in
                 </button>

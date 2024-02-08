@@ -10,13 +10,13 @@ export const Project = ({ project, currentUser, getAndSetProjects }) => {
   return (
     <div
       key={project.id}
-      class="border-8 border-topbar rounded-3xl w-80 h-56 text-l p-4 m-1  "
+      className="border-8 border-topbar rounded-3xl w-80 h-56 text-l p-4 m-1  "
     >
-      <div class="mb-2 font-bold text-xl">{project.name}</div>
+      <div className="mb-2 font-bold text-xl">{project.name}</div>
       <div>
         Client Name:{" "}
         <Link
-          class="text-sky-950 hover:text-sky-600"
+          className="text-sky-950 hover:text-sky-600"
           to={`/clients/${project.user.id}`}
         >
           {project.user.firstName} {project.user.lastName}
@@ -30,7 +30,7 @@ export const Project = ({ project, currentUser, getAndSetProjects }) => {
         currentUser={currentUser}
         getAndSetProjects={getAndSetProjects}
       />
-      <div class="flex space-x-2 mt-1">
+      <div className="flex space-x-2 mt-1">
         <ProjectDelete
           project={project}
           currentUser={currentUser}

@@ -9,10 +9,9 @@ export const AllClients = ({ setTitle }) => {
     getAllUsers().then((clients) => {
       const filteredClients = clients.filter((client) => !client.isEmployee);
       setAllClients(filteredClients);
+      setTitle("All Clients");
     });
-  }, []);
-
-  setTitle("All Clients");
+  }, [setTitle]);
 
   return (
     <div className="flex flex-wrap ml-40">
