@@ -4,6 +4,7 @@ import "../../output.css";
 import { getAllUsers } from "../../services/userServices.js";
 import { saveNewProject } from "../../services/projectServices.js";
 import { useNavigate } from "react-router-dom";
+import { usStates } from "../../functions/UsStates.js";
 
 export const NewProject = ({ setTitle }) => {
   const [clients, setClients] = useState([]);
@@ -78,19 +79,43 @@ export const NewProject = ({ setTitle }) => {
       </select>
 
       <div className="mt-5">
-        <label>Market</label>
+        <label class="text-sm text-gray-500">Start Date</label>
+
         <input
-          type="text"
-          className="form-control"
-          placeholder="Product name"
-          onChange={(event) => {
-            setSelectedMarket(event.target.value);
-          }}
+          type="date"
+          id="small-input"
+          class="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="Select date"
+        />
+      </div>
+      <div className="mt-5">
+        <label class="text-sm text-gray-500">End Date</label>
+        <input
+          id="small-input"
+          type="date"
+          class="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="Select date"
         />
       </div>
 
       <div className="mt-5">
-        <label>Timeline</label>
+        <select
+          class=" bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-200 focus:border-blue-200 block w-full ps-10 p-2.5"
+          id="small-input"
+          name="market"
+          onChange={(event) => {
+            setSelectedMarket(event.target.value);
+          }}
+        >
+          <option id="0" value={0}>
+            Market
+          </option>
+          {usStates.map((stateAbbreviation, index) => (
+            <option key={index} value={stateAbbreviation}>
+              {stateAbbreviation}
+            </option>
+          ))}
+        </select>
       </div>
 
       <div className="mt-5">

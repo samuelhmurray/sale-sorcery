@@ -11,7 +11,7 @@ export const ProjectDelete = ({ project, currentUser, getAndSetProjects }) => {
     <div>
       {project.userProjects.find((ep) => ep.userId === currentUser.id) && (
         <button
-          class="bg-delete hover:bg-hoverdelete font-bold py1 px-4 rounded"
+          class="mt-2 px-3 py-2 text-sm font-medium text-center text-slate-300 bg-delete rounded-lg hover:bg-hoverdelete focus:ring-4 focus:outline-none focus:ring-blue-300 "
           onClick={() => {
             handleDelete(project);
           }}
