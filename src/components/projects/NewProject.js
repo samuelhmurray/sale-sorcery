@@ -1,6 +1,5 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import "./Project.css";
 import "../../output.css";
 import { getAllUsers } from "../../services/userServices.js";
 import { saveNewProject } from "../../services/projectServices.js";
@@ -27,8 +26,9 @@ export const NewProject = ({ setTitle }) => {
 
   useEffect(() => {
     getAllUsers().then((res) => {
-      if (Array.isArray(res) && res[0]?.isEmployee) {
-        setClients(res);
+      if (Array.isArray(res)) {
+        const nonEmployees = res.filter((user) => !user.isEmployee);
+        setClients(nonEmployees);
       }
     });
   }, []);
@@ -58,113 +58,98 @@ export const NewProject = ({ setTitle }) => {
   };
 
   return (
-    <form className="profile">
-      <h2>Create New Project</h2>
-      <fieldset>
-        <select
-          className="form-dropdown"
-          name="client"
-          onChange={(event) => {
-            setSelectedClient(+event.target.value);
-          }}
-        >
-          <option id="0" value={0}>
-            Assign Client
+    <div className="flex-nowrap  w-96 m-5 ml-40 mt-10 border-8 border-topbar rounded-3xl p-4">
+      <select
+        class="text-text bg-edit hover:bg-hoveredit font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
+        name="client"
+        onChange={(event) => {
+          setSelectedClient(+event.target.value);
+          console.log(selectedClient);
+        }}
+      >
+        <option id="0" value={0}>
+          Assign Client
+        </option>
+        {clients.map((client) => (
+          <option key={client.id} value={client.id}>
+            {client.firstName} {client.lastName}
           </option>
-          {clients.map((client) => (
-            <option key={client.id} value={client.id}>
-              {client.firstName} {client.lastName}
-            </option>
-          ))}
-        </select>
-      </fieldset>
-      <fieldset>
-        <div className="form-group">
-          <label>Project Name</label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Project Name"
-            onChange={(event) => {
-              setSelectedProjectName(event.target.value);
-            }}
-          />
-        </div>
-      </fieldset>
-      <fieldset>
-        <div className="form-group">
-          <label>Budget</label>
-          <input
-            type="number"
-            className="form-control"
-            placeholder="Budget"
-            onChange={(event) => {
-              setSelectedBudget(event.target.value);
-            }}
-          />
-        </div>
-      </fieldset>
-      <fieldset>
-        <div className="form-group">
-          <label>Product name</label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Product name"
-            onChange={(event) => {
-              setSelectedProduct(event.target.value);
-            }}
-          />
-        </div>
-      </fieldset>
-      {/* change this to a dropdown with statelist 
-      https://shorturl.at/huV57 */}
-      <fieldset>
-        <div className="form-group">
-          <label>Market</label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Product name"
-            onChange={(event) => {
-              setSelectedMarket(event.target.value);
-            }}
-          />
-        </div>
-      </fieldset>
-      <fieldset>
-        <div className="form-group">
-          <label>Timeline</label>
-          {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DemoContainer components={["SingleInputDateRangeField"]}>
-              <DateRangePicker
-                slots={{ field: SingleInputDateRangeField }}
-                name="allowedRange"
-              />
-            </DemoContainer>
-          </LocalizationProvider>{" "} */}
-        </div>
-      </fieldset>
-      <fieldset>
-        <div className="form-group">
-          <label>Description</label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Description"
-            onChange={(event) => {
-              setSelectedDescription(event.target.value);
-            }}
-          />
-        </div>
-      </fieldset>
-      <fieldset>
-        <div className="form-btn">
-          <button className="form-btn btn-info" onClick={handleAddNewProject}>
-            Add New Project
-          </button>
-        </div>
-      </fieldset>
-    </form>
+        ))}
+      </select>
+
+      <div className="mt-5">
+        <label>Market</label>
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Product name"
+          onChange={(event) => {
+            setSelectedMarket(event.target.value);
+          }}
+        />
+      </div>
+
+      <div className="mt-5">
+        <label>Timeline</label>
+      </div>
+
+      <div className="mt-5">
+        <input
+          type="text"
+          id="small-input"
+          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-sm focus:ring-blue-300 focus:border-blue-300 "
+          placeholder="Project Name"
+          onChange={(event) => {
+            setSelectedProjectName(event.target.value);
+          }}
+        />
+      </div>
+
+      <div className="mt-5">
+        <input
+          type="number"
+          id="small-input"
+          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-sm focus:ring-blue-300 focus:border-blue-300 "
+          placeholder="Budget"
+          onChange={(event) => {
+            setSelectedBudget(event.target.value);
+          }}
+        />
+      </div>
+
+      <div className="mt-5">
+        <input
+          type="text"
+          id="small-input"
+          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-sm focus:ring-blue-300 focus:border-blue-300 "
+          placeholder="Product name"
+          onChange={(event) => {
+            setSelectedProduct(event.target.value);
+          }}
+        />
+      </div>
+
+      <div className="mt-5">
+        <input
+          type="text"
+          id="small-input"
+          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-sm focus:ring-blue-300 focus:border-blue-300 "
+          placeholder="Description"
+          onChange={(event) => {
+            setSelectedDescription(event.target.value);
+          }}
+        />
+      </div>
+
+      <div>
+        <button
+          type="submit"
+          onClick={handleAddNewProject}
+          class="mt-5 px-3 py-2 text-sm font-medium text-center text-text bg-edit rounded-lg hover:bg-hoveredit focus:ring-4 focus:outline-none focus:ring-blue-300 "
+        >
+          Add
+        </button>
+      </div>
+    </div>
   );
 };

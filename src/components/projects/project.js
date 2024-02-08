@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { formatToUSD } from "../../functions/formatUSD.js";
 import { ProjectClaim } from "./ProjectClaim.js";
 import { ProjectDelete } from "./ProjectDelete.js";
-import "./Project.css";
 import { ProjectEditBtn } from "./ProjectEditBtn.js";
 import "../../output.css";
 

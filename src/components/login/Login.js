@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Login.css";
 import "../../output.css";
 import { getUsersByEmail } from "../../services/userServices.js";
 
 export const Login = () => {
-  const [email, set] = useState("charlie.brown@example.com");
+  const [email, setEmail] = useState("charlie.brown@example.com");
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
@@ -29,36 +28,41 @@ export const Login = () => {
     });
   };
   return (
-    <main className="container-login">
-      <section>
-        <form className="form-login" onSubmit={handleLogin}>
-          <h1>Sale Sorcery</h1>
-          <h2>Please sign in</h2>
-          <fieldset>
-            <div className="form-group">
+    <div className="flex justify-center items-center h-screen">
+      <main className="text-center block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow  ">
+        <section>
+          <form class="" onSubmit={handleLogin}>
+            <h1 class="text-4xl">Sale Sorcery</h1>
+            <h2 class="mt-5 text-lg">Please sign in</h2>
+
+            <div class="flex justify-center">
               <input
-                type="email"
+                onChange={(evt) => setEmail(evt.target.value)}
                 value={email}
-                onChange={(evt) => set(evt.target.value)}
-                className="form-control"
-                placeholder="Email address"
+                type="email"
+                id="email"
+                class="text-center bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-200 focus:border-blue-200 block  w-72 p-2.5"
+                placeholder="Email"
                 required
-                autoFocus
               />
             </div>
-          </fieldset>
-          <fieldset>
-            <div className="form-group">
-              <button className="login-btn btn-info" type="submit">
-                Sign in
-              </button>
-            </div>
-          </fieldset>
-        </form>
-      </section>
-      {/* <section>
-        <Link to="/register">Not a member yet?</Link>
-      </section> */}
-    </main>
+
+            <fieldset>
+              <div className="">
+                <button
+                  type="submit"
+                  class="mt-5 px-3 py-2 text-sm font-medium text-center text-text bg-edit rounded-lg hover:bg-hoveredit focus:ring-4 focus:outline-none focus:ring-blue-300 "
+                >
+                  Sign in
+                </button>
+              </div>
+            </fieldset>
+          </form>
+        </section>
+        {/* <section>
+          <Link to="/register">Not a member yet?</Link>
+        </section> */}
+      </main>
+    </div>
   );
 };

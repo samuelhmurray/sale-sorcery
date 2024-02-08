@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Card } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { getUserById } from "../../services/userServices.js";
 import { getAllProjects } from "../../services/projectServices.js";
@@ -26,25 +25,22 @@ export const ClientDetails = ({ setTitle }) => {
   setTitle(clientName);
 
   return (
-    <>
-      <Card className="card">
-        <Card.Title className="card-title">
-          {client.firstName} {client.lastName}
-        </Card.Title>
-        <Card.Text>Budget under managment: $xyz</Card.Text>
-      </Card>
-      <Card className="card">
-        <Card.Text>Title: {client.title}</Card.Text>
-        <Card.Text>Phone: {client.phone}</Card.Text>
-        <Card.Text>Email: {client.email}</Card.Text>
-      </Card>
+    <div className="ml-40 flex-nowrap">
+      <div className="text-center border-8 border-topbar rounded-3xl  p-4 m-1">
+        <div className="text-4xl">Budget under managment: $xyz</div>
+        <div className="">
+          <div>Email: {client.email}</div>
+          <div>Phone: {client.phone}</div>
+          <div>Title: {client.title}</div>
+        </div>
+      </div>
 
       {/* needs to be fixed  */}
-      <Card className="card">
-        <Card.Text>Project name: {projects.name}</Card.Text>
-        <Card.Text>Market: {projects.market}</Card.Text>
-        <Card.Text>Budget: {client.budget}</Card.Text>
-      </Card>
-    </>
+      <div className=" text-center border-8 border-topbar rounded-3xl p-4 m-1">
+        <div>Project name: {projects.name}</div>
+        <div>Market: {projects.market}</div>
+        <div>Budget: {client.budget}</div>
+      </div>
+    </div>
   );
 };

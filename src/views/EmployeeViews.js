@@ -7,6 +7,7 @@ import { NewProject } from "../components/projects/NewProject.js";
 import { useEffect, useState } from "react";
 import "../output.css";
 import { SideBar } from "../components/nav/SideBar.js";
+import { ProjectEditPage } from "../components/projects/ProjectEditPage.js";
 
 export const EmployeeViews = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -45,6 +46,10 @@ export const EmployeeViews = () => {
           />
         </Route>
         <Route path="newProject" element={<NewProject setTitle={setTitle} />} />
+        <Route
+          path="/editProject/:projectId"
+          element={<ProjectEditPage setTitle={setTitle} />}
+        />
       </Route>
     </Routes>
   );

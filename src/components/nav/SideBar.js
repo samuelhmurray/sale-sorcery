@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../../output.css";
 
 export const SideBar = () => {
   return (
@@ -23,14 +24,16 @@ export const SideBar = () => {
             </Link>
           </button>
         </div>
-        <button className="mt-auto">
-          <Link
-            className="text-4xl w-20 h-20 border-8 border-topbar rounded-full flex items-center justify-center"
-            to="/logIn"
-          >
-            L
-          </Link>
-        </button>
+        <div className="w-28 flex flex-col text-slate-50 items-center">
+          <button className="mt-auto">
+            <Link
+              className="text-4xl w-20 h-20 border-8 border-topbar rounded-full flex items-center justify-center"
+              to="/logIn"
+            >
+              L
+            </Link>
+          </button>
+        </div>
       </div>
     </div>
   );

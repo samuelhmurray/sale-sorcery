@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Card } from "react-bootstrap";
-import "../../App.css";
 import "../../output.css";
 import { getAllUsers } from "../../services/userServices.js";
 

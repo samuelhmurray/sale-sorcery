@@ -160,11 +160,6 @@
       "projectId": 4
     },
     {
-      "id": 6,
-      "userId": 1,
-      "projectId": 9
-    },
-    {
       "id": 7,
       "userId": 2,
       "projectId": 2
@@ -205,11 +200,6 @@
       "projectId": 4
     },
     {
-      "id": 16,
-      "userId": 1,
-      "projectId": 9
-    },
-    {
       "id": 17,
       "userId": 2,
       "projectId": 2
@@ -236,8 +226,13 @@
     },
     {
       "userId": 5,
+      "projectId": 8,
+      "id": 23
+    },
+    {
+      "userId": 5,
       "projectId": 9,
-      "id": 22
+      "id": 24
     }
   ],
   "projects": [
@@ -390,11 +385,6 @@
       "id": 8,
       "platformId": 2,
       "projectId": 8
-    },
-    {
-      "id": 9,
-      "platformId": 3,
-      "projectId": 9
     }
   ],
   "platforms": [

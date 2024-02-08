@@ -4,11 +4,10 @@ import {
   saveEditedProject,
 } from "../../services/projectServices.js";
 import { useNavigate, useParams } from "react-router-dom";
-import "./Project.css";
 import { getAllUsers } from "../../services/userServices.js";
 import "../../output.css";
 
-export const ProjectEditPage = () => {
+export const ProjectEditPage = ({ setTitle }) => {
   const [clients, setClients] = useState([]);
   const [project, setProject] = useState();
   const [selectedClient, setSelectedClient] = useState();
@@ -38,8 +37,8 @@ export const ProjectEditPage = () => {
     const projectObj = {
       name: selectedProjectName,
       userId: selectedClient,
-      startDate: selectedStartDate,
-      endDate: selectedEndDate,
+      // startDate: selectedStartDate,
+      // endDate: selectedEndDate,
       market: selectedMarket,
       product: selectedProduct,
       currency: "USD",
@@ -50,10 +49,9 @@ export const ProjectEditPage = () => {
       navigate(`/projects`);
     });
   };
-
+  setTitle(`Edit: ${project?.name}`);
   return (
-    <form className="profile">
-      <h2>Edit Project: {project?.name}</h2>
+    <form className="ml-96">
       <fieldset>
         <select
           className="form-dropdown"
