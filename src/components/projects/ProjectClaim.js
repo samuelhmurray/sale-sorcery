@@ -1,28 +1,26 @@
 import React from "react";
-import "./Project.css";
-import { addNewEmployeeProject } from "../../services/employeeProjectServeces.js";
+import "../../output.css";
+import { addNewuserProject } from "../../services/userProjectServeces.js";
 
 export const ProjectClaim = ({ project, currentUser, getAndSetProjects }) => {
   const handleClaimBtn = async (project) => {
-    const newEmployeeProjectObj = {
-      employeeId: currentUser.id,
+    const newuserProjectObj = {
+      userId: currentUser.id,
       projectId: project.id,
     };
 
-    await addNewEmployeeProject(newEmployeeProjectObj);
+    await addNewuserProject(newuserProjectObj);
     getAndSetProjects();
   };
 
   return (
     <div>
-      {!project.employeeProjects.find(
-        (ep) => ep.employeeId === currentUser.id
-      ) && (
+      {!project.userProjects.find((ep) => ep.userId === currentUser.id) && (
         <button
           onClick={() => {
             handleClaimBtn(project);
           }}
-          className="form-btn claim-btn"
+          className="mt-2 px-3 py-2 text-sm font-medium text-center text-text bg-claim rounded-lg hover:bg-hoverclaim focus:ring-4 focus:outline-none focus:ring-blue-300 "
         >
           Claim
         </button>

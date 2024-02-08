@@ -1,29 +1,34 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Card } from "react-bootstrap";
-import "../../App.css";
-import { getAllClients } from "../../services/clientServices.js";
+import "../../output.css";
+import { getAllUsers } from "../../services/userServices.js";
 
-export const AllClients = () => {
+export const AllClients = ({ setTitle }) => {
   const [allClients, setAllClients] = useState([]);
   useEffect(() => {
-    getAllClients().then((clients) => {
-      setAllClients(clients);
+    getAllUsers().then((clients) => {
+      const filteredClients = clients.filter((client) => !client.isEmployee);
+      setAllClients(filteredClients);
+      setTitle("All Clients");
     });
-  }, []);
+  }, [setTitle]);
+
   return (
-    <div className="card-container">
+    <div className="flex flex-wrap ml-40">
       {allClients.map((client) => (
-        <Card key={client.id} className="card card-link">
+        <div
+          key={client.id}
+          className="hover:shadow-2xl border-8 border-topbar rounded-3xl w-80 h-50 text-l p-4 m-1 "
+        >
           <Link to={`/clients/${client.id}`}>
-            <Card.Title>
+            <div>
               Client Name: {client.firstName} {client.lastName}
-            </Card.Title>
-            <Card.Text>Title: {client.title}</Card.Text>
-            <Card.Text>Phone: {client.phone}</Card.Text>
-            <Card.Text>Email: {client.email}</Card.Text>
+            </div>
+            <div>Title: {client.title}</div>
+            <div>Phone: {client.phone}</div>
+            <div>Email: {client.email}</div>
           </Link>
-        </Card>
+        </div>
       ))}
     </div>
   );

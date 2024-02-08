@@ -1,5 +1,5 @@
 import React from "react";
-import "./Project.css";
+import "../../output.css";
 import { deleteProject } from "../../services/projectServices.js";
 
 export const ProjectDelete = ({ project, currentUser, getAndSetProjects }) => {
@@ -9,11 +9,9 @@ export const ProjectDelete = ({ project, currentUser, getAndSetProjects }) => {
   };
   return (
     <div>
-      {project.employeeProjects.find(
-        (ep) => ep.employeeId === currentUser.id
-      ) && (
+      {project.userProjects.find((ep) => ep.userId === currentUser.id) && (
         <button
-          className="form-btn del-btn"
+          className="mt-2 px-3 py-2 text-sm font-medium text-center text-slate-300 bg-delete rounded-lg hover:bg-hoverdelete focus:ring-4 focus:outline-none focus:ring-blue-300 "
           onClick={() => {
             handleDelete(project);
           }}

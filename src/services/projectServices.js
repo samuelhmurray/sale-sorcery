@@ -1,13 +1,15 @@
-import { deleteEmployeeProjectsByProjectId } from "./employeeProjectServeces.js";
+import { deleteuserProjectsByProjectId } from "./userProjectServeces.js";
 
 export const getAllProjects = async () => {
   const res = await fetch(
-    "http://localhost:8088/projects?_expand=client&_embed=employeeProjects"
+    "http://localhost:8088/projects?_expand=user&_embed=userProjects"
   );
   return await res.json();
 };
 export const getProjectById = async (projectId) => {
-  const res = await fetch(`http://localhost:8088/projects/${projectId}`);
+  const res = await fetch(
+    `http://localhost:8088/projects/${projectId}?_expand=user`
+  );
   return await res.json();
 };
 
@@ -15,7 +17,7 @@ export const saveNewProject = async (projectObj) => {
   const postOptions = {
     method: "POST",
     headers: {
-      "content-type": "application/json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(projectObj),
   };
@@ -28,7 +30,7 @@ export const saveEditedProject = async (projectId, updatedProjectObj) => {
   const editOptions = {
     method: "PUT",
     headers: {
-      "content-type": "application/json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(updatedProjectObj),
   };
@@ -40,11 +42,11 @@ export const saveEditedProject = async (projectId, updatedProjectObj) => {
 };
 
 export const deleteProject = async (projectId) => {
-  // await deleteEmployeeProjectsByProjectId(projectId);
+  await deleteuserProjectsByProjectId(projectId);
   const deleteOptions = {
     method: "DELETE",
     headers: {
-      "content-type": "application/json",
+      "Content-Type": "application/json",
     },
   };
 
@@ -55,7 +57,7 @@ export const editProject = async (projectId, updatedProjectObj) => {
   const editOptions = {
     method: "PUT",
     headers: {
-      "content-type": "application/json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(updatedProjectObj),
   };

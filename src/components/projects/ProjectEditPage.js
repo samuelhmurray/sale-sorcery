@@ -4,15 +4,18 @@ import {
   saveEditedProject,
 } from "../../services/projectServices.js";
 import { useNavigate, useParams } from "react-router-dom";
-import "./Project.css";
-import { getAllClients } from "../../services/clientServices.js";
+import { getAllUsers } from "../../services/userServices.js";
+import "../../output.css";
+import { formatToUSD } from "../../functions/formatUSD.js";
+import { usStates } from "../../functions/UsStates.js";
 
-export const ProjectEditPage = () => {
+export const ProjectEditPage = ({ setTitle }) => {
   const [clients, setClients] = useState([]);
-  const [project, setProject] = useState();
-  const [selectedClient, setSelectedClient] = useState();
+  const [project, setProject] = useState({});
+  const [selectedClient, setSelectedClient] = useState(0);
   const [selectedProjectName, setSelectedProjectName] = useState("");
-  const [selectedTimeLine, setSelectedTimeLine] = useState("");
+  const [selectedStartDate, setSelectedStartDate] = useState("");
+  const [selectedEndDate, setSelectedEndDate] = useState("");
   const [selectedMarket, setSelectedMarket] = useState("");
   const [selectedProduct, setSelectedProduct] = useState("");
   const [selectedBudget, setSelectedBudget] = useState(0);
@@ -21,139 +24,167 @@ export const ProjectEditPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    getAllClients().then((res) => {
-      setClients(res);
+    getAllUsers().then((res) => {
+      if (Array.isArray(res)) {
+        const nonEmployees = res.filter((user) => !user.isEmployee);
+        setClients(nonEmployees);
+      }
     });
   }, []);
 
   useEffect(() => {
     getProjectById(projectId).then((projectData) => {
-      setProject(projectData);
+      if (projectData) {
+        setProject(projectData);
+        setSelectedClient(+projectData.user.id);
+        setSelectedStartDate(projectData.startDate);
+        setSelectedEndDate(projectData.endDate);
+        setSelectedMarket(projectData.market);
+        setSelectedProjectName(projectData.name);
+        setSelectedBudget(projectData.budget);
+        setSelectedProduct(projectData.product);
+        setSelectedDescription(projectData.description);
+        setTitle(`Edit: ${projectData.name}`);
+      }
     });
-  }, []);
+  }, [setTitle]);
 
   const handleEditProject = async (event) => {
     event.preventDefault();
     const projectObj = {
       name: selectedProjectName,
-      clientId: selectedClient,
-      timeline: selectedTimeLine,
+      userId: selectedClient,
+      startDate: selectedStartDate,
+      endDate: selectedEndDate,
       market: selectedMarket,
       product: selectedProduct,
+      currency: "USD",
       budget: +selectedBudget,
       description: selectedDescription,
     };
-    saveEditedProject(projectId, projectObj).then((res) => {
+    saveEditedProject(projectId, projectObj).then(() => {
       navigate(`/projects`);
     });
   };
 
   return (
-    <form className="profile">
-      <h2>Edit Project: {project?.name}</h2>
-      <fieldset>
-        <select
-          className="form-dropdown"
-          name="client"
+    <div className="flex-nowrap  w-96 m-5 ml-40 mt-10 border-8 border-topbar rounded-3xl p-4">
+      <select
+        className="text-text bg-edit hover:bg-hoveredit font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
+        name="client"
+        value={selectedClient}
+        onChange={(event) => {
+          setSelectedClient(event.target.value);
+        }}
+      >
+        {project.user && (
+          <option value={project.user.id}>
+            {`${project.user.firstName} ${project.user.lastName}`}
+          </option>
+        )}
+        {clients.map((client) => (
+          <option key={client.id} value={client.id}>
+            {`${client.firstName} ${client.lastName}`}
+          </option>
+        ))}
+      </select>
+
+      <div className="mt-5">
+        <label className="text-sm text-gray-500">Start Date</label>
+        <input
+          type="date"
+          id="small-input"
+          className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          value={selectedStartDate}
           onChange={(event) => {
-            setSelectedClient(+event.target.value);
+            setSelectedStartDate(event.target.value);
+          }}
+        />
+      </div>
+
+      <div className="mt-5">
+        <label className="text-sm text-gray-500">End Date</label>
+        <input
+          type="date"
+          id="small-input"
+          className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          value={selectedEndDate}
+          onChange={(event) => {
+            setSelectedEndDate(event.target.value);
+          }}
+        />
+      </div>
+
+      <div className="mt-5">
+        <select
+          className=" bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-200 focus:border-blue-200 block w-full ps-10 p-2.5"
+          id="small-input"
+          name="market"
+          value={selectedMarket}
+          onChange={(event) => {
+            setSelectedMarket(event.target.value);
           }}
         >
-          <option id="0" value={0}>
-            Assign Client
-          </option>
-          {clients.map((client) => (
-            <option key={client.id} value={client.id}>
-              {client.firstName} {client.lastName}
+          {project.market && (
+            <option
+              value={project.market}
+            >{`Market: ${project.market}`}</option>
+          )}
+          {usStates.map((stateAbbreviation, index) => (
+            <option key={index} value={stateAbbreviation}>
+              {stateAbbreviation}
             </option>
           ))}
         </select>
-      </fieldset>
-      <fieldset>
-        <div className="form-group">
-          <label>Project Name</label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Project Name"
-            onChange={(event) => {
-              setSelectedProjectName(event.target.value);
-            }}
-          />
-        </div>
-      </fieldset>
-      <fieldset>
-        <div className="form-group">
-          <label>Budget</label>
-          <input
-            type="number"
-            className="form-control"
-            placeholder="Budget"
-            onChange={(event) => {
-              setSelectedBudget(event.target.value);
-            }}
-          />
-        </div>
-      </fieldset>
-      <fieldset>
-        <div className="form-group">
-          <label>Product name</label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Product name"
-            onChange={(event) => {
-              setSelectedProduct(event.target.value);
-            }}
-          />
-        </div>
-      </fieldset>
-      <fieldset>
-        <div className="form-group">
-          <label>Market</label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Product name"
-            onChange={(event) => {
-              setSelectedMarket(event.target.value);
-            }}
-          />
-        </div>
-      </fieldset>
-      <fieldset>
-        <div className="form-group">
-          <label>Timeline</label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Timeline"
-            onChange={(event) => {
-              setSelectedTimeLine(event.target.value);
-            }}
-          />
-        </div>
-      </fieldset>
-      <fieldset>
-        <div className="form-group">
-          <label>Description</label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Description"
-            onChange={(event) => {
-              setSelectedDescription(event.target.value);
-            }}
-          />
-        </div>
-      </fieldset>
-      <fieldset>
-        <div className="form-btn">
-          <button className="form-btn btn-info" onClick={handleEditProject}>
-            Save
-          </button>
-        </div>
-      </fieldset>
-    </form>
+      </div>
+
+      <div className="mt-5">
+        <input
+          type="text"
+          className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-sm focus:ring-blue-300 focus:border-blue-300 "
+          value={selectedProjectName}
+          onChange={(event) => {
+            setSelectedProjectName(event.target.value);
+          }}
+        />
+      </div>
+
+      <div className="mt-5">
+        <input
+          type="number"
+          className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-sm focus:ring-blue-300 focus:border-blue-300 "
+          value={selectedBudget}
+          onChange={(event) => {
+            setSelectedBudget(+event.target.value);
+          }}
+        />
+      </div>
+
+      <div className="mt-5">
+        <input
+          type="text"
+          className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-sm focus:ring-blue-300 focus:border-blue-300 "
+          value={selectedProduct}
+          onChange={(event) => {
+            setSelectedProduct(event.target.value);
+          }}
+        />
+      </div>
+
+      <div className="mt-5">
+        <input
+          type="text"
+          className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-sm focus:ring-blue-300 focus:border-blue-300 "
+          value={selectedDescription}
+          onChange={(event) => {
+            setSelectedDescription(event.target.value);
+          }}
+        />
+      </div>
+
+      <div className="mt-5 px-3 py-2 text-sm font-medium text-center text-text bg-edit rounded-lg hover:bg-hoveredit focus:ring-4 focus:outline-none focus:ring-blue-300 ">
+        <button onClick={handleEditProject}>Save</button>
+      </div>
+    </div>
   );
 };
