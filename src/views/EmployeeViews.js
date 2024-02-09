@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import "../output.css";
 import { SideBar } from "../components/nav/SideBar.js";
 import { ProjectEditPage } from "../components/projects/ProjectEditPage.js";
+import { Stress } from "../components/stress/Stress.js";
 
 export const EmployeeViews = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -45,6 +46,7 @@ export const EmployeeViews = () => {
             element={<ClientDetails setTitle={setTitle} />}
           />
         </Route>
+        <Route path="stress" element={<Stress setTitle={setTitle} />} />
         <Route path="newProject" element={<NewProject setTitle={setTitle} />} />
         <Route
           path="/editProject/:projectId"

@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { getUserById } from "../../services/userServices.js";
 import "../../output.css";
 import { formatToUSD } from "../../functions/formatUSD.js";
+import { Doughnut } from "react-chartjs-2";
 
 export const ClientDetails = ({ setTitle }) => {
   const [client, setClient] = useState([]);
@@ -35,7 +36,7 @@ export const ClientDetails = ({ setTitle }) => {
           <div>Title: {client.title}</div>
         </div>
       </div>
-      <div className="flex justify-between">
+      <div className="flex justify-around">
         {client.projects &&
           client.projects.map((project, index) => (
             <div
@@ -48,6 +49,7 @@ export const ClientDetails = ({ setTitle }) => {
             </div>
           ))}
       </div>
+      {/* <Doughnut /> */}
     </div>
   );
 };

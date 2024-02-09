@@ -258,6 +258,16 @@
       "userId": 1,
       "projectId": 6,
       "id": 30
+    },
+    {
+      "userId": 5,
+      "projectId": 11,
+      "id": 31
+    },
+    {
+      "userId": 5,
+      "projectId": 5,
+      "id": 32
     }
   ],
   "projects": [
@@ -368,6 +378,30 @@
       "budget": 50000,
       "description": "An influencer collaboration campaign for Luminosity Lift targeting the PA market, operating from April 1st to June 30th, with a budget of $50,000.",
       "id": 9
+    },
+    {
+      "name": "Nike Branding",
+      "userId": 10,
+      "startDate": "2024-02-08",
+      "endDate": "2024-02-16",
+      "market": "GA - Georgia",
+      "product": "Track and Field",
+      "currency": "USD",
+      "budget": 10000,
+      "description": "GA track and field brand bump ",
+      "id": 10
+    },
+    {
+      "name": "Ecom For Halo",
+      "userId": 9,
+      "startDate": "2024-02-09",
+      "endDate": "2024-05-29",
+      "market": "NM - New Mexico",
+      "product": "Halo Collars",
+      "currency": "USD",
+      "budget": 190000,
+      "description": "CPA campaign for halo collar in NM",
+      "id": 11
     }
   ],
   "projectPlatforms": [
