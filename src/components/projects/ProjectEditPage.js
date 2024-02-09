@@ -68,7 +68,7 @@ export const ProjectEditPage = ({ setTitle }) => {
   };
 
   return (
-    <div className="flex-nowrap  w-96 m-5 ml-40 mt-10 border-8 border-topbar rounded-3xl p-4">
+    <div className="flex-nowrap  w-96 m-5 ml-44 mt-2 border-8 border-topbar rounded-3xl p-4">
       <select
         className="text-text bg-edit hover:bg-hoveredit font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
         name="client"

@@ -27,42 +27,46 @@ export const Login = () => {
       }
     });
   };
+
   return (
-    <div className="flex justify-center items-center h-screen">
-      <main className="text-center block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow  ">
-        <section>
-          <form className="" onSubmit={handleLogin}>
-            <h1 className="text-4xl">Sale Sorcery</h1>
-            <h2 className="mt-5 text-lg">Please sign in</h2>
+    <div className="flex justify-center  h-screen">
+      <div className="flex flex-col items-center">
+        <img src="../../sslogo.png" className="mt-5" />
+        <main className="text-center mt-10 block p-28 bg-slate-200 shadow-2xl border border-gray-200 rounded-lg ">
+          <section>
+            <form className="" onSubmit={handleLogin}>
+              <h1 className="text-4xl">Sale Sorcery</h1>
+              <h2 className="mt-5 text-lg">Please sign in</h2>
 
-            <div className="flex justify-center">
-              <input
-                onChange={(evt) => setEmail(evt.target.value)}
-                value={email}
-                type="email"
-                id="email"
-                className="text-center bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-200 focus:border-blue-200 block  w-72 p-2.5"
-                placeholder="Email"
-                required
-              />
-            </div>
-
-            <fieldset>
               <div className="">
-                <button
-                  type="submit"
-                  className="mt-5 px-3 py-2 text-sm font-medium text-center text-text bg-edit rounded-lg hover:bg-hoveredit focus:ring-4 focus:outline-none focus:ring-blue-300 "
-                >
-                  Sign in
-                </button>
+                <input
+                  onChange={(evt) => setEmail(evt.target.value)}
+                  value={email}
+                  type="email"
+                  id="email"
+                  className="text-center bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-200 focus:border-blue-200 block w-72 p-2.5"
+                  placeholder="Email"
+                  required
+                />
               </div>
-            </fieldset>
-          </form>
-        </section>
-        {/* <section>
-          <Link to="/register">Not a member yet?</Link>
-        </section> */}
-      </main>
+
+              <fieldset>
+                <div>
+                  <button
+                    type="submit"
+                    className="w-40 mt-5 p-4 text-sm text-center text-text bg-edit rounded-lg hover:bg-hoveredit focus:ring-4 focus:outline-none focus:ring-blue-300"
+                  >
+                    Sign in
+                  </button>
+                </div>
+              </fieldset>
+            </form>
+          </section>
+          {/* <section>
+            <Link to="/register">Not a member yet?</Link>
+          </section> */}
+        </main>
+      </div>
     </div>
   );
 };

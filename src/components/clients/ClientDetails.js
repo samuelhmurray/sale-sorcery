@@ -24,7 +24,7 @@ export const ClientDetails = ({ setTitle }) => {
   }
 
   return (
-    <div className="ml-40 mr-10 flex-nowrap">
+    <div className="ml-44 mr-10 flex-nowrap">
       <div className="text-center border-8 border-topbar rounded-3xl  p-4 m-1">
         <div className="text-4xl">
           Budget under managment: {formatToUSD(totalBudget)}
