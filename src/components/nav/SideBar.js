@@ -5,7 +5,7 @@ import "../../output.css";
 export const SideBar = () => {
   return (
     <div className="flex ">
-      <div className="fixed justify-between top-30 left-0 h-screen w-40 flex flex-col bg-sidebar shadow-lg text-slate-50 items-center">
+      <div className="fixed justify-between mt-32 top-30 left-0 h-screen w-40 flex flex-col bg-sidebar shadow-lg text-slate-50 items-center">
         <div>
           <button className="m-10">
             <Link
