@@ -261,13 +261,13 @@
     },
     {
       "userId": 5,
-      "projectId": 11,
-      "id": 31
-    },
-    {
-      "userId": 5,
       "projectId": 5,
       "id": 32
+    },
+    {
+      "userId": 1,
+      "projectId": 10,
+      "id": 33
     }
   ],
   "projects": [
@@ -286,12 +286,12 @@
     {
       "name": "Celestial Odyssey Launch",
       "userId": 7,
-      "startDate": "2024-07-01",
-      "endDate": "2024-09-30",
-      "market": "NY - New York",
+      "startDate": "2024-07-09",
+      "endDate": "2024-10-05",
+      "market": "CO - Colorado",
       "product": "Ethereal Elixer",
       "currency": "USD",
-      "budget": 100000,
+      "budget": 1000000,
       "description": "A branding campaign for Ethereal Elixer targeting the CO market, running from August 1st to October 30th, with a budget of $75,000.",
       "id": 2
     },
@@ -390,18 +390,6 @@
       "budget": 10000,
       "description": "GA track and field brand bump ",
       "id": 10
-    },
-    {
-      "name": "Ecom For Halo",
-      "userId": 9,
-      "startDate": "2024-02-09",
-      "endDate": "2024-05-29",
-      "market": "NM - New Mexico",
-      "product": "Halo Collars",
-      "currency": "USD",
-      "budget": 190000,
-      "description": "CPA campaign for halo collar in NM",
-      "id": 11
     }
   ],
   "projectPlatforms": [
