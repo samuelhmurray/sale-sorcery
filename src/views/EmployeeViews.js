@@ -10,6 +10,7 @@ import { SideBar } from "../components/nav/SideBar.js";
 import { ProjectEditPage } from "../components/projects/ProjectEditPage.js";
 import { Stress } from "../components/stress/Stress.js";
 import { ProjectDetails } from "../components/projects/ProjectDetails.js";
+import { Home } from "../components/home/Home.js";
 
 export const EmployeeViews = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -34,6 +35,11 @@ export const EmployeeViews = () => {
           </>
         }
       >
+        <Route
+          path="/"
+          element={<Home setTitle={setTitle} currentUser={currentUser} />}
+        />
+
         <Route path="projects">
           <Route
             index

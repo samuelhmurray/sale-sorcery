@@ -5,9 +5,9 @@ import "../../output.css";
 export const SideBar = () => {
   return (
     <div className="flex ">
-      <div className="fixed justify-between mt-32 top-30 left-0 h-screen w-40 flex flex-col bg-sidebar shadow-lg text-slate-50 items-center">
-        <div>
-          <button className="m-10">
+      <div className="fixed mt-32 top-30 left-0 h-screen w-40 flex flex-col bg-sidebar shadow-lg text-slate-50 items-center">
+        <div className="flex flex-col justify-center items-center">
+          <button className="mt-8">
             <Link
               className="text-4xl w-24 h-20 border-8 border-topbar hover:rounded-2xl rounded-full flex items-center justify-center"
               to="/projects"
@@ -28,7 +28,7 @@ export const SideBar = () => {
               </svg>
             </Link>
           </button>
-          <button className="m-10">
+          <button className="mt-8">
             <Link
               className="text-4xl w-24 h-20 border-8 border-topbar hover:rounded-2xl rounded-full flex items-center justify-center"
               to="/clients"
@@ -49,7 +49,7 @@ export const SideBar = () => {
               </svg>
             </Link>
           </button>
-          <button className="m-10">
+          <button className="mt-8">
             <Link
               to="/stress"
               className="text-4xl w-24 h-20 border-8 border-topbar hover:rounded-2xl rounded-full flex items-center justify-center"
@@ -71,10 +71,10 @@ export const SideBar = () => {
             </Link>
           </button>
         </div>
-        <div className="w-28 flex flex-col text-slate-50 items-center mb-24">
-          <button className="mt-auto">
+        <div className="justify-center items-center w-28 flex flex-col mt-auto text-slate-50  mb-24">
+          <button className="">
             <Link
-              className="mb-28 text-4xl w-24 h-20 border-8 border-topbar hover:rounded-2xl rounded-full flex items-center justify-center"
+              className="mb-20 text-4xl w-24 h-20 border-8 border-topbar hover:rounded-2xl rounded-full flex items-center justify-center"
               to="/logIn"
             >
               <svg
