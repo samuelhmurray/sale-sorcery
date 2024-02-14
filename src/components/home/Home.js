@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { getAllProjects } from "../../services/projectServices.js";
 import { formatToUSD } from "../../functions/formatUSD.js";
 import { Link } from "react-router-dom";
+import MetaImage from "../../assets/Meta.png";
+import GoogleImage from "../../assets/google-ads.png";
 
 export const Home = ({ setTitle, currentUser }) => {
   const [allProjects, setAllProjects] = useState([]);
@@ -27,6 +29,13 @@ export const Home = ({ setTitle, currentUser }) => {
     setTotalBudget(total);
   }, [allProjects, currentUser]);
 
+  const redirectToGoogle = () => {
+    window.open("https://ads.google.com/home/", "_blank");
+  };
+  const redirectToMeta = () => {
+    window.open("https://www.facebook.com/business/ads", "_blank");
+  };
+
   return (
     <div className="ml-44 mt-36 mr-10 flex-nowrap">
       <div className="text-center border-8 border-topbar rounded-3xl p-4 m-1">
@@ -36,11 +45,8 @@ export const Home = ({ setTitle, currentUser }) => {
       </div>
       <div className="flex flex-wrap justify-start">
         {currentProjects.map((project, index) => (
-          <Link to={`/projects/${project.id}`}>
-            <div
-              key={index}
-              className="text-center  border-8 border-topbar hover:shadow-2xl rounded-3xl p-4 m-1 w-60"
-            >
+          <Link key={index} to={`/projects/${project.id}`}>
+            <div className="text-center border-8 border-topbar hover:shadow-2xl rounded-3xl p-4 m-1 w-60">
               <div>
                 <strong>Project Name:</strong> {project.name}
               </div>
@@ -48,13 +54,19 @@ export const Home = ({ setTitle, currentUser }) => {
           </Link>
         ))}
       </div>
-      <div>
-        <div>
-          <button>Meta btn</button>
-        </div>
-        <div>
-          <button>Google btn</button>
-        </div>
+      <div className="flex justify-around mt-8">
+        <button
+          onClick={redirectToMeta}
+          className="w-96 h-96 border-8 border-topbar hover:shadow-2xl rounded-3xl p-4"
+        >
+          <img src={MetaImage} alt="Meta Image" />
+        </button>
+        <button
+          onClick={redirectToGoogle}
+          className="w-96 h-96 border-8 border-topbar hover:shadow-2xl rounded-3xl p-4"
+        >
+          <img src={GoogleImage} alt="Google Image" />
+        </button>
       </div>
     </div>
   );
