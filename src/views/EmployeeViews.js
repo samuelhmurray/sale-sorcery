@@ -8,6 +8,9 @@ import { useEffect, useState } from "react";
 import "../output.css";
 import { SideBar } from "../components/nav/SideBar.js";
 import { ProjectEditPage } from "../components/projects/ProjectEditPage.js";
+import { Stress } from "../components/stress/Stress.js";
+import { ProjectDetails } from "../components/projects/ProjectDetails.js";
+import { Home } from "../components/home/Home.js";
 
 export const EmployeeViews = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -33,11 +36,24 @@ export const EmployeeViews = () => {
         }
       >
         <Route
-          path="projects"
-          element={
-            <AllProjects setTitle={setTitle} currentUser={currentUser} />
-          }
+          path="/"
+          element={<Home setTitle={setTitle} currentUser={currentUser} />}
         />
+
+        <Route path="projects">
+          <Route
+            index
+            element={
+              <AllProjects setTitle={setTitle} currentUser={currentUser} />
+            }
+          />
+          <Route
+            path=":projectId"
+            element={<ProjectDetails setTitle={setTitle} />}
+          />
+        </Route>
+
+        <Route path="newProject" element={<NewProject setTitle={setTitle} />} />
         <Route path="clients">
           <Route index element={<AllClients setTitle={setTitle} />} />
           <Route
@@ -45,7 +61,7 @@ export const EmployeeViews = () => {
             element={<ClientDetails setTitle={setTitle} />}
           />
         </Route>
-        <Route path="newProject" element={<NewProject setTitle={setTitle} />} />
+        <Route path="stress" element={<Stress setTitle={setTitle} />} />
         <Route
           path="/editProject/:projectId"
           element={<ProjectEditPage setTitle={setTitle} />}

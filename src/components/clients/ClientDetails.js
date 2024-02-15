@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { getUserById } from "../../services/userServices.js";
 import "../../output.css";
 import { formatToUSD } from "../../functions/formatUSD.js";
@@ -35,14 +35,22 @@ export const ClientDetails = ({ setTitle }) => {
           <div>Title: {client.title}</div>
         </div>
       </div>
-      <div className="flex justify-between">
+      <div className="flex justify-around">
         {client.projects &&
           client.projects.map((project, index) => (
             <div
               key={index}
               className="text-center border-8 border-topbar rounded-3xl p-4 m-1 w-96 "
             >
-              <div>Project name: {project.name}</div>
+              <div>
+                Project Name:{" "}
+                <Link
+                  className="text-sky-950 hover:text-sky-600"
+                  to={`/projects/${project.id}`}
+                >
+                  {project.name}
+                </Link>
+              </div>
               <div>Market: {project.market}</div>
               <div>Budget: {formatToUSD(project.budget)}</div>
             </div>

@@ -12,7 +12,11 @@ export const Project = ({ project, currentUser, getAndSetProjects }) => {
       key={project.id}
       className="border-8 border-topbar rounded-3xl w-80 h-56 text-l p-4 m-1  "
     >
-      <div className="mb-2 font-bold text-xl">{project.name}</div>
+      <Link to={`/projects/${project.id}`}>
+        <div className="text-sky-950 hover:text-sky-600 mb-2 font-bold text-xl">
+          {project.name}
+        </div>
+      </Link>
       <div>
         Client Name:{" "}
         <Link

@@ -17,11 +17,13 @@ export const Login = () => {
           "sale_user",
           JSON.stringify({
             id: user.id,
+            firstName: user.firstName,
+            lastName: user.lastName,
             isAdmin: user.isAdmin,
             isEmployee: user.isEmployee,
           })
         );
-        navigate("/projects");
+        navigate("/");
       } else {
         window.alert("Invalid login");
       }
@@ -29,10 +31,10 @@ export const Login = () => {
   };
 
   return (
-    <div className="flex justify-center  h-screen">
+    <div className="flex justify-center h-screen">
       <div className="flex flex-col items-center">
         <img src="../../sslogo.png" className="mt-5" />
-        <main className="text-center mt-10 block p-28 bg-slate-200 shadow-2xl border border-gray-200 rounded-lg ">
+        <main className="text-center mt-10 block p-16 bg-slate-200 shadow-2xl border border-gray-200 rounded-lg ">
           <section>
             <form className="" onSubmit={handleLogin}>
               <h1 className="text-4xl">Sale Sorcery</h1>
@@ -62,9 +64,6 @@ export const Login = () => {
               </fieldset>
             </form>
           </section>
-          {/* <section>
-            <Link to="/register">Not a member yet?</Link>
-          </section> */}
         </main>
       </div>
     </div>
