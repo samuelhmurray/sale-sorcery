@@ -46,9 +46,9 @@ export const Home = ({ setTitle, currentUser }) => {
       <div className="flex flex-wrap justify-start">
         {currentProjects.map((project, index) => (
           <Link key={index} to={`/projects/${project.id}`}>
-            <div className="text-center border-8 border-topbar hover:shadow-2xl rounded-3xl p-4 m-1 w-60">
+            <div className="text-center border-8 border-topbar hover:shadow-2xl rounded-3xl p-4 m-1 w-80 h-30">
               <div>
-                <strong>Project Name:</strong> {project.name}
+                <strong> {project.name}</strong>
               </div>
             </div>
           </Link>
@@ -59,13 +59,13 @@ export const Home = ({ setTitle, currentUser }) => {
           onClick={redirectToMeta}
           className="w-96 h-96 border-8 border-topbar hover:shadow-2xl rounded-3xl p-4"
         >
-          <img src={MetaImage} alt="Meta Image" />
+          <img src={MetaImage} />
         </button>
         <button
           onClick={redirectToGoogle}
           className="w-96 h-96 border-8 border-topbar hover:shadow-2xl rounded-3xl p-4"
         >
-          <img src={GoogleImage} alt="Google Image" />
+          <img src={GoogleImage} />
         </button>
       </div>
     </div>
