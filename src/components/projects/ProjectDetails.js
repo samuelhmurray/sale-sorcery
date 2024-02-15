@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getProjectById } from "../../services/projectServices.js";
 import { formatToUSD } from "../../functions/formatUSD.js";
+import { ProjectDetailsBarChart } from "../charts/ProjectDetailsBarChart.js";
 
 export const ProjectDetails = ({ setTitle }) => {
   const [project, setProject] = useState([]);
@@ -54,6 +55,7 @@ export const ProjectDetails = ({ setTitle }) => {
           </div>
         </div>
       </div>
+      <ProjectDetailsBarChart />
     </div>
   );
 };

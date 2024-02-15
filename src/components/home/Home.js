@@ -38,9 +38,9 @@ export const Home = ({ setTitle, currentUser }) => {
 
   return (
     <div className="ml-44 mt-36 mr-10 flex-nowrap">
-      <div className="text-center border-8 border-topbar rounded-3xl p-4 m-1">
+      <div className="text-center border-8 border-topbar rounded-3xl p-4 mr-16 m-1">
         <div className="text-4xl">
-          Total Managed Spend: {formatToUSD(totalBudget)}
+          Total Managed Spend: <strong>{formatToUSD(totalBudget)}</strong>
         </div>
       </div>
       <div className="flex flex-wrap justify-start">

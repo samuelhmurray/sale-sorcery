@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 export const EmployeeNav = ({ title }) => {
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-topbar p-5 flex justify-between items-center z-10">
-      <div className="mr-8">
+    <nav className="sticky top-0 left-0 right-0 bg-topbar p-5 flex  items-center z-10">
+      <div className="mr-8 ">
         <Link to="/">
           <button className="flex items-center hover:rounded-2xl text-8xl py-1 px-4 rounded-full bg-slate-600">
             <svg
@@ -25,9 +25,9 @@ export const EmployeeNav = ({ title }) => {
           </button>
         </Link>{" "}
       </div>
-      <div className="flex-grow text-8xl">{title}</div>
-      <div className="flex m-0 flex-nowrap text-slate-900">
-        <div className="mr-8">
+      <div className="text-6xl">{title}</div>
+      <div className="ml-auto">
+        <div className="">
           <Link to="/newProject">
             <button className="flex items-center hover:rounded-2xl text-8xl py-1 px-4  rounded-full bg-slate-600">
               <svg

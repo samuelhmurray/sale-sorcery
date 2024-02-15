@@ -6,12 +6,12 @@ export const SideBar = () => {
   const location = useLocation();
 
   return (
-    <div className="flex ">
-      <div className="fixed mt-32 top-30 left-0 h-screen w-40 flex flex-col bg-sidebar shadow-lg text-slate-50 items-center">
+    <div className=" fixed flex">
+      <div className=" h-screen w-26 flex flex-col bg-sidebar shadow-lg text-slate-50 items-center">
         <div className="flex flex-col justify-center items-center ">
-          <button className="mt-8">
+          <button className="mt-10">
             <Link
-              className="text-4xl w-24 h-20 border-8 border-topbar hover:rounded-2xl rounded-full flex items-center justify-center"
+              className=" w-20 h-14 border-8 border-topbar hover:rounded-2xl rounded-full flex items-center justify-center"
               to="/projects"
             >
               <svg
@@ -20,7 +20,7 @@ export const SideBar = () => {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-12 h-12"
+                className="w-8 h-8"
               >
                 <path
                   strokeLinecap="round"
@@ -32,7 +32,7 @@ export const SideBar = () => {
           </button>
           <button className="mt-8">
             <Link
-              className="text-4xl w-24 h-20 border-8 border-topbar hover:rounded-2xl rounded-full flex items-center justify-center"
+              className=" w-20 h-14 border-8 border-topbar hover:rounded-2xl rounded-full flex items-center justify-center"
               to="/clients"
             >
               <svg
@@ -41,7 +41,7 @@ export const SideBar = () => {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-12 h-12"
+                className="w-8 h-8"
               >
                 <path
                   strokeLinecap="round"
@@ -54,15 +54,16 @@ export const SideBar = () => {
           <button className="mt-8">
             <Link
               to="/stress"
-              className="text-4xl w-24 h-20 border-8 border-topbar hover:rounded-2xl rounded-full flex items-center justify-center"
+              className=" w-20 h-14 border-8 border-topbar hover:rounded-2xl rounded-full flex items-center justify-center"
             >
               {location.pathname === "/stress" ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-12 h-12"
+                  className="w-8 h-8"
                 >
                   <path
                     strokeLinecap="round"
@@ -77,7 +78,7 @@ export const SideBar = () => {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-12 h-12"
+                  className="w-8 h-8"
                 >
                   <path
                     strokeLinecap="round"
@@ -89,10 +90,10 @@ export const SideBar = () => {
             </Link>
           </button>
         </div>
-        <div className="justify-center items-center w-28 flex flex-col mt-auto text-slate-50  mb-24">
+        <div className="items-center w-28 flex flex-col mt-auto text-slate-50">
           <button className="">
             <Link
-              className="mb-20 text-4xl w-24 h-20 border-8 border-topbar hover:rounded-2xl rounded-full flex items-center justify-center"
+              className="mb-40 text-4xl w-20 h-14 border-8 border-topbar hover:rounded-2xl rounded-full flex items-center justify-center"
               to="/logIn"
             >
               <svg
@@ -101,7 +102,7 @@ export const SideBar = () => {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-12 h-12"
+                className="w-8 h-8"
               >
                 <path
                   strokeLinecap="round"
