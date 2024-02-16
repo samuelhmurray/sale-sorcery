@@ -37,16 +37,16 @@ export const Home = ({ setTitle, currentUser }) => {
   };
 
   return (
-    <div className="ml-44 mt-36 mr-10 flex-nowrap">
-      <div className="text-center border-8 border-topbar rounded-3xl p-4 mr-16 m-1">
+    <div className="ml-32 mt-4 mr-6 flex-nowrap">
+      <div className="text-center  border-8 border-topbar rounded-3xl p-4 ">
         <div className="text-4xl">
           Total Managed Spend: <strong>{formatToUSD(totalBudget)}</strong>
         </div>
       </div>
-      <div className="flex flex-wrap justify-start">
+      <div className="flex flex-wrap justify-between mt-4">
         {currentProjects.map((project, index) => (
           <Link key={index} to={`/projects/${project.id}`}>
-            <div className="text-center border-8 border-topbar hover:shadow-2xl rounded-3xl p-4 m-1 w-80 h-30">
+            <div className="text-center border-8 border-topbar hover:shadow-2xl rounded-3xl p-4 m-1 w-72 h-30">
               <div>
                 <strong> {project.name}</strong>
               </div>
@@ -54,16 +54,16 @@ export const Home = ({ setTitle, currentUser }) => {
           </Link>
         ))}
       </div>
-      <div className="flex justify-around mt-8">
+      <div className="flex justify-around p-5">
         <button
           onClick={redirectToMeta}
-          className="w-96 h-96 border-8 border-topbar hover:shadow-2xl rounded-3xl p-4"
+          className="w-40 h-40  border-8 border-topbar hover:shadow-2xl rounded-3xl p-4"
         >
           <img src={MetaImage} />
         </button>
         <button
           onClick={redirectToGoogle}
-          className="w-96 h-96 border-8 border-topbar hover:shadow-2xl rounded-3xl p-4"
+          className="w-40 h-40 border-8 border-topbar hover:shadow-2xl rounded-3xl p-4"
         >
           <img src={GoogleImage} />
         </button>

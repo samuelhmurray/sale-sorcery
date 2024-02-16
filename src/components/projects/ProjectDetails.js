@@ -17,7 +17,7 @@ export const ProjectDetails = ({ setTitle }) => {
   }, [projectId, setTitle]);
 
   return (
-    <div className="ml-44 mt-36 mr-10 flex-nowrap">
+    <div className="ml-32 mt-4 mr-4 flex-nowrap">
       <div className="text-center border-8 border-topbar rounded-3xl  p-4 m-1">
         <div className="flex justify-around">
           <div>

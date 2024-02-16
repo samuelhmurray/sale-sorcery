@@ -2,7 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-.responsive-text{
-    font-size: 6vw;
-white-space: nowrap;
-}

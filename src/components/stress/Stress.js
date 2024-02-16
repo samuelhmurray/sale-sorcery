@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-const ROWS = 20;
-const COLS = 20;
+const ROWS = 36;
+const COLS = 60;
 const CELL_SIZE = 16;
 const INITIAL_SNAKE = [
   [10, 10],
@@ -140,7 +140,7 @@ export const Stress = ({ setTitle }) => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen">
+    <div className="flex items-center justify-center mt-10">
       <div
         className="grid"
         style={{
