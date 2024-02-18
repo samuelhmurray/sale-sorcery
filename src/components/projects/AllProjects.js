@@ -19,7 +19,7 @@ export const AllProjects = ({ currentUser, setTitle }) => {
 
   return (
     <>
-      <div className="flex flex-wrap ml-44 mt-36">
+      <div className="flex flex-wrap ml-32 mt-4 mr-4">
         {allProjects.map((project) => {
           return (
             <div key={`project-container-${project.id}`}>

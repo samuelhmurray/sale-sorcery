@@ -44,7 +44,7 @@ export const ProjectEditPage = ({ setTitle }) => {
         setSelectedBudget(projectData.budget);
         setSelectedProduct(projectData.product);
         setSelectedDescription(projectData.description);
-        setTitle(`Edit: ${projectData.name}`);
+        setTitle(projectData.name);
       }
     });
   }, [setTitle]);
@@ -68,9 +68,9 @@ export const ProjectEditPage = ({ setTitle }) => {
   };
 
   return (
-    <div className="flex-nowrap mt-36 w-96 m-5 ml-44  border-8 border-topbar rounded-3xl p-4">
+    <div className="flex-nowrap w-auto ml-32 mt-4 mr-4 border-8 border-topbar rounded-3xl p-4">
       <select
-        className="text-text  bg-edit hover:bg-hoveredit font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
+        className="text-text w-full bg-edit hover:bg-hoveredit font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
         name="client"
         value={selectedClient}
         onChange={(event) => {
@@ -181,10 +181,12 @@ export const ProjectEditPage = ({ setTitle }) => {
           }}
         />
       </div>
-
-      <div className="mt-5 px-3 py-2 text-sm font-medium text-center text-text bg-edit rounded-lg hover:bg-hoveredit focus:ring-4 focus:outline-none focus:ring-blue-300 ">
-        <button onClick={handleEditProject}>Save</button>
-      </div>
+      <button
+        className="mt-5 px-3 py-2 text-sm font-medium text-center text-text bg-edit rounded-lg hover:bg-hoveredit focus:ring-4 focus:outline-none focus:ring-blue-300 w-full"
+        onClick={handleEditProject}
+      >
+        Save
+      </button>
     </div>
   );
 };

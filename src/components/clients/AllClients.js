@@ -14,7 +14,7 @@ export const AllClients = ({ setTitle }) => {
   }, [setTitle]);
 
   return (
-    <div className="flex flex-wrap ml-44 mt-36">
+    <div className="flex flex-wrap ml-32 mt-4 mr-4">
       {allClients.map((client) => (
         <div
           key={client.id}

@@ -31,22 +31,19 @@ export const Login = () => {
   };
 
   return (
-    <div className="flex justify-center h-screen">
+    <div className="flex justify-center">
       <div className="flex flex-col items-center">
-        <img src="../../sslogo.png" className="mt-5" />
-        <main className="text-center mt-10 block p-16 bg-slate-200 shadow-2xl border border-gray-200 rounded-lg ">
+        <img src="../../sslogo.png" className="m-auto" />
+        <main className="text-center mt-5 p-9  bg-slate-200 shadow-2xl border border-gray-200 rounded-lg ">
           <section>
             <form className="" onSubmit={handleLogin}>
-              <h1 className="text-4xl">Sale Sorcery</h1>
-              <h2 className="mt-5 text-lg">Please sign in</h2>
-
               <div className="">
                 <input
                   onChange={(evt) => setEmail(evt.target.value)}
                   value={email}
                   type="email"
                   id="email"
-                  className="text-center bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-200 focus:border-blue-200 block w-72 p-2.5"
+                  className="text-center mt-5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-200 focus:border-blue-200 block w-72 p-2.5"
                   placeholder="Email"
                   required
                 />
