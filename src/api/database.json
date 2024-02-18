@@ -145,11 +145,6 @@
       "projectId": 6
     },
     {
-      "id": 3,
-      "userId": 3,
-      "projectId": 1
-    },
-    {
       "id": 4,
       "userId": 4,
       "projectId": 8
@@ -183,11 +178,6 @@
       "id": 12,
       "userId": 2,
       "projectId": 6
-    },
-    {
-      "id": 13,
-      "userId": 3,
-      "projectId": 1
     },
     {
       "id": 14,
@@ -245,11 +235,6 @@
       "id": 26
     },
     {
-      "userId": 5,
-      "projectId": 1,
-      "id": 28
-    },
-    {
       "userId": 1,
       "projectId": 5,
       "id": 29
@@ -296,18 +281,6 @@
     }
   ],
   "projects": [
-    {
-      "name": "Celestial Odyssey Brand",
-      "userId": 6,
-      "startDate": "2024-08-01",
-      "endDate": "2024-10-30",
-      "market": "CO - Colorado",
-      "product": "Ethereal Elixer",
-      "currency": "USD",
-      "budget": 75000,
-      "description": "A branding campaign for Ethereal Elixer targeting the CO market, running from August 1st to October 30th, with a budget of $75,000.",
-      "id": 1
-    },
     {
       "name": "Celestial Odyssey Launch",
       "userId": 7,
@@ -598,11 +571,6 @@
     }
   ],
   "projectPlatforms": [
-    {
-      "id": 1,
-      "platformId": 1,
-      "projectId": 1
-    },
     {
       "id": 2,
       "platformId": 2,
