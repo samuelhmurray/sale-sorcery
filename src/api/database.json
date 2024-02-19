@@ -278,6 +278,11 @@
       "userId": 5,
       "projectId": 25,
       "id": 38
+    },
+    {
+      "userId": 5,
+      "projectId": 6,
+      "id": 39
     }
   ],
   "projects": [
@@ -332,9 +337,9 @@
     {
       "name": "Pacific Panorama Campaign",
       "userId": 6,
-      "startDate": "2024-04-01",
+      "startDate": "2024-04-06",
       "endDate": "2024-06-30",
-      "market": "WA - Washington",
+      "market": "AL - Alabama",
       "product": "Oceanic Oasis",
       "currency": "USD",
       "budget": 55000,
